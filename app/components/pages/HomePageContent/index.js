@@ -30,7 +30,7 @@ export default function HomePageContent() {
             <div className={wrapperStyles}>
 
                 <div className={styles.content}>
-                    i
+                    Select a theme
                 </div>
 
             </div>
