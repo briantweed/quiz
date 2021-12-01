@@ -18,6 +18,8 @@ export default function HomePageContent() {
         if (storedTheme) {
             let hello = async () => update(storedTheme);
             hello().then(() => setDisplay(true));
+        } else {
+            setDisplay(true);
         }
     }, []);
 
