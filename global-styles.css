@@ -1,0 +1,11 @@
+.default {
+    background: white
+}
+
+.dark {
+    background: #333333;
+}
+
+.dracula {
+    background: #000000;
+}

@@ -5,6 +5,7 @@ import {ThemeWrapper} from "@libraries/ThemeWrapper";
 import {AnimatePresence} from "framer-motion";
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
+import '../global-styles.css';
 
 
 const Toast = dynamic(() => import("@libraries/Toast").then());

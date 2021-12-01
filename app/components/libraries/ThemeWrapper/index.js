@@ -19,6 +19,11 @@ export function ThemeWrapper({ children }) {
     const update = (theme) => {
         updateTheme(theme);
         localStorage.setItem(COOKIE_THEME, theme);
+        const element = document.querySelector("body");
+        if (element) {
+            element.classList.remove(...document.querySelector("body").classList);
+            document.querySelector("body").classList.add(theme);
+        }
     }
 
 
