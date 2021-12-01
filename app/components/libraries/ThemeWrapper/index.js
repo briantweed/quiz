@@ -1,12 +1,10 @@
-import {createContext, useContext, useEffect, useState} from 'react';
-import {THEMES, COOKIE_THEME} from "../../../constants";
+import {createContext, useContext, useEffect, useMemo, useState} from 'react';
+import {THEMES, COOKIE_THEME, BODY_TAG} from "../../../constants";
 
 const AppContext = createContext({});
 
 
 export function ThemeWrapper({ children }) {
-
-    const [theme, updateTheme] = useState(THEMES.DEFAULT.value);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem(COOKIE_THEME);
@@ -15,13 +13,28 @@ export function ThemeWrapper({ children }) {
         }
     }, []);
 
+    const options = useMemo(() => THEMES, [])
+
+    const {DEFAULT: { value: defaultValue }} = options;
+
+    const [theme, updateTheme] = useState(defaultValue);
+
+
+    const label = (() => {
+        const key = Object.keys(options).filter(key => {
+            const option = options[key];
+            return option.value === theme;
+        })
+        return options[key].label;
+    })();
+
 
     const update = (theme) => {
         updateTheme(theme);
         localStorage.setItem(COOKIE_THEME, theme);
-        const element = document.querySelector("body");
+        const element = document.querySelector(BODY_TAG);
         if (element) {
-            element.classList.remove(...document.querySelector("body").classList);
+            element.classList.remove(...document.querySelector(BODY_TAG).classList);
             document.querySelector("body").classList.add(theme);
         }
     }
@@ -33,7 +46,7 @@ export function ThemeWrapper({ children }) {
 
 
     return (
-        <AppContext.Provider value={{theme, update, implode}}>
+        <AppContext.Provider value={{theme, update, implode, label}}>
             { children }
         </AppContext.Provider>
     );

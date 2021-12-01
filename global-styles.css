@@ -1,11 +1,15 @@
-.default {
-    background: white
+body {
+    overflow: hidden;
 }
 
-.dark {
+body.default {
+    background: white;
+}
+
+body.dark {
     background: #333333;
 }
 
-.dracula {
+body.dracula {
     background: #000000;
 }

@@ -1,11 +1,10 @@
 import styles from './Header.module.scss';
 import {useAppContext} from "@libraries/ThemeWrapper";
-import ThemeSwitch from "@components/shared/ThemeSwitch";
 
 
 export default function Header() {
 
-    const {theme, implode} = useAppContext();
+    const {theme, implode, label} = useAppContext();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (
@@ -13,8 +12,8 @@ export default function Header() {
 
             <div className={styles.content}>
 
-                <h1 className={styles.title}>Theme Test</h1>
-                <ThemeSwitch/>
+                <h1 className={styles.title}>Theme <span className="font-light">Test</span></h1>
+                <h2 className='text-sm'>{ label } <span className="font-light">Theme</span></h2>
 
             </div>
 

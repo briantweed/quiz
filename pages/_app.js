@@ -14,14 +14,14 @@ const Toast = dynamic(() => import("@libraries/Toast").then());
 function MyApp({Component, pageProps, router}) {
 
     return (
-        <AnimatePresence exitBeforeEnter>
-            <Provider store={store}>
-                <ThemeWrapper>
+        <Provider store={store}>
+            <ThemeWrapper>
+                <AnimatePresence exitBeforeEnter>
                     <Component key={router.route} {...pageProps}/>
-                </ThemeWrapper>
-                <Toast/>
-            </Provider>
-        </AnimatePresence>
+                </AnimatePresence>
+            </ThemeWrapper>
+            <Toast/>
+        </Provider>
     )
 
 }

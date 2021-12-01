@@ -15,7 +15,8 @@ export default function ThemeSwitch() {
     return (
         <div className={wrapperStyles}>
 
-            <label htmlFor="theme">Select Theme: </label>
+            <label htmlFor="theme">Select <span className="font-light">Theme:</span></label>
+
             <select value={theme} name="theme" id="theme" onChange={(event) => update(event.target.value)}>
                 {Object.keys(options).map(key => {
                     const option = options[key];
