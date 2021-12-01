@@ -1,0 +1,39 @@
+.wrapper {
+    @apply flex items-center;
+
+    select {
+        @apply mx-4 pr-4;
+    }
+
+
+    // ----- THEMES -----------------------------
+
+    &.default {
+
+        select {
+            @apply text-gray-darkest;
+        }
+
+    }
+
+    &.dark {
+
+        select {
+            @apply bg-black;
+            @apply text-blue-lightest;
+        }
+
+    }
+
+    &.dracula {
+
+        select {
+            @apply bg-black;
+            @apply text-red;
+        }
+
+    }
+
+    // ------------------------------------------
+
+}

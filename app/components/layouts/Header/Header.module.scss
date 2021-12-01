@@ -1,0 +1,38 @@
+.wrapper {
+    @apply sticky top-0;
+    @apply w-full;
+    @apply text-xl font-semibold;
+    @apply transition-all duration-500;
+    height: 45px;
+
+    .content {
+        @apply container;
+        @apply flex items-center justify-between h-full;
+    }
+
+    h1.title {
+        @apply m-0;
+    }
+
+
+    // ----- THEMES -----------------------------
+
+    &.default {
+        @apply bg-gray-lighter;
+        @apply text-blue-darkest;
+        @apply transition-all duration-500;
+    }
+
+    &.dark {
+        @apply bg-blue-darkest text-gray-lightest;
+        @apply transition-all duration-500;
+    }
+
+    &.dracula {
+        @apply bg-black text-red;
+        @apply transition-all duration-500;
+    }
+
+    // ------------------------------------------
+
+}

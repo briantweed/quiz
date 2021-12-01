@@ -1,0 +1,12 @@
+import styles from './{{ page_name }}.module.scss';
+
+
+export default function {{ page_name }}(props) {
+
+    return (
+        <div className={styles.wrapper}>
+
+        </div>
+    )
+
+}

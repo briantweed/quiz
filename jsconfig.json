@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@components/*": ["app/components/*"],
+            "@layouts/*": ["app/components/layouts/*"],
+            "@pages/*": ["app/components/pages/*"],
+            "@libraries/*": ["app/components/libraries/*"],
+            "@store": ["app/store/store"],
+            "@api/*": ["app/hooks/api/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}
