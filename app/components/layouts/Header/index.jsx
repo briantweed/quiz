@@ -1,10 +1,11 @@
-import styles from './Header.module.scss';
 import {useAppContext} from "@libraries/ThemeWrapper";
+
+import styles from './Header.module.scss';
 
 
 export default function Header() {
 
-    const {theme, implode, label} = useAppContext();
+    const {theme, label, methods: {implode}} = useAppContext();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (

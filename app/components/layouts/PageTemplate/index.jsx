@@ -1,10 +1,11 @@
 import React from 'react';
-import Head from "next/head";
-import {motion} from "framer-motion";
-import {variants} from "./variants";
 import LogRocket from 'logrocket';
+import {motion} from "framer-motion";
+import Head from "next/head";
 import Footer from "@layouts/Footer";
 import Header from "@layouts/Header";
+
+import {variants} from "./variants";
 
 
 class PageTemplate extends React.Component {

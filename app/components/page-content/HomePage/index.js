@@ -1,14 +1,16 @@
 import dynamic from "next/dynamic";
-import styles from './HomePage.module.scss';
 import {useAppContext} from "@libraries/ThemeWrapper";
 import ThemeSwitch from "@components/shared/ThemeSwitch";
+
+import styles from './HomePage.module.scss';
+
 
 const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
 
 
 export default function HomePageContent() {
 
-    const {theme, implode} = useAppContext();
+    const {theme, methods:{implode}} = useAppContext();
 
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 

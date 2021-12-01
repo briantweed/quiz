@@ -46,7 +46,7 @@ export function ThemeWrapper({ children }) {
 
 
     return (
-        <AppContext.Provider value={{theme, update, implode, label}}>
+        <AppContext.Provider value={{theme, label, methods: {update, implode}}}>
             { children }
         </AppContext.Provider>
     );
