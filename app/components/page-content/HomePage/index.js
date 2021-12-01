@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import {useEffect, useState} from "react";
-import styles from './HomePageContent.module.scss';
+import Link from "next/link";
+import styles from './HomePage.module.scss';
 import {useAppContext} from "@libraries/ThemeWrapper";
 
 const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
@@ -19,7 +19,15 @@ export default function HomePageContent() {
             <div className={wrapperStyles}>
 
                 <div className={styles.content}>
-                    Select a theme
+                    <Link href={"/"}>
+                        <a>Home</a>
+                    </Link>
+                    <Link href={"/test-1"}>
+                        <a>Test 1</a>
+                    </Link>
+                    <Link href={"/test-2"}>
+                        <a>Test 2</a>
+                    </Link>
                 </div>
 
             </div>

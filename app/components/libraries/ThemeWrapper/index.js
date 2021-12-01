@@ -7,15 +7,11 @@ const AppContext = createContext({});
 export function ThemeWrapper({ children }) {
 
     const [theme, updateTheme] = useState(THEMES.DEFAULT.value);
-    const [display, setDisplay] = useState(false);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem(COOKIE_THEME);
         if (storedTheme) {
-            let updateTheme = async () => update(storedTheme);
-            updateTheme().then(() => setDisplay(true));
-        } else {
-            setDisplay(true);
+            update(storedTheme);
         }
     }, []);
 
@@ -31,11 +27,11 @@ export function ThemeWrapper({ children }) {
     }
 
 
-    return display ? (
+    return (
         <AppContext.Provider value={{theme, update, implode}}>
             { children }
         </AppContext.Provider>
-    ) : <div/>;
+    );
 
 }
 

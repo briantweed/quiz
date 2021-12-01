@@ -68,17 +68,15 @@ class PageTemplate extends React.Component {
                           rel="stylesheet"/>
                 </Head>
 
+                <Header/>
                 <motion.div
                     layout
                     initial="initial"
                     animate="animate"
                     exit="exit"
                     variants={variants}
-                >
-                    <Header/>
-                    {this.props.children}
-                    <Footer/>
-                </motion.div>
+                >{ this.props.children }</motion.div>
+                <Footer/>
 
             </>
         );
