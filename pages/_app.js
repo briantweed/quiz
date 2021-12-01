@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import {Provider} from "react-redux";
 import store from "@store";
-import {AppWrapper} from "@libraries/AppContext";
+import {ThemeWrapper} from "@libraries/ThemeWrapper";
 import {AnimatePresence} from "framer-motion";
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
@@ -15,9 +15,9 @@ function MyApp({Component, pageProps, router}) {
     return (
         <AnimatePresence exitBeforeEnter>
             <Provider store={store}>
-                <AppWrapper>
+                <ThemeWrapper>
                     <Component key={router.route} {...pageProps}/>
-                </AppWrapper>
+                </ThemeWrapper>
                 <Toast/>
             </Provider>
         </AnimatePresence>

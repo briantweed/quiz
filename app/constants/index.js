@@ -13,4 +13,4 @@ export const THEMES = {
     },
 }
 
-
+export const COOKIE_THEME = 'theme';

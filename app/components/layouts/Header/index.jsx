@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import {useAppContext} from "@libraries/AppContext";
+import {useAppContext} from "@libraries/ThemeWrapper";
 import ThemeSwitch from "@components/shared/ThemeSwitch";
 
 

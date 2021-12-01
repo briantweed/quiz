@@ -1,5 +1,5 @@
 import styles from './ThemeSwitch.module.scss';
-import {useAppContext} from "@libraries/AppContext";
+import {useAppContext} from "@libraries/ThemeWrapper";
 import {THEMES} from "../../../constants";
 import {useMemo} from "react";
 import { nanoid } from 'nanoid';

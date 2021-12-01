@@ -1,30 +1,19 @@
 import dynamic from "next/dynamic";
 import {useEffect, useState} from "react";
 import styles from './HomePageContent.module.scss';
-import {useAppContext} from "@libraries/AppContext";
+import {useAppContext} from "@libraries/ThemeWrapper";
 
 const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
 
 
 export default function HomePageContent() {
 
-    const {theme, update, implode} = useAppContext();
-    const [display, setDisplay] = useState(false);
+    const {theme, implode} = useAppContext();
+
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
 
-    useEffect(() => {
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
-            let hello = async () => update(storedTheme);
-            hello().then(() => setDisplay(true));
-        } else {
-            setDisplay(true);
-        }
-    }, []);
-
-
-    return display ? (
+    return (
         <PageTemplate>
 
             <div className={wrapperStyles}>
@@ -36,8 +25,6 @@ export default function HomePageContent() {
             </div>
 
         </PageTemplate>
-    ) : (
-        <div>loading ...</div>
     )
 
 }
