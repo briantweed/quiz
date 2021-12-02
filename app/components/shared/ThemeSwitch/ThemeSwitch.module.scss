@@ -40,6 +40,14 @@
 
     }
 
+    &.contrast {
+
+        select {
+            @apply bg-black hover:border-yellow;
+        }
+
+    }
+
     // ------------------------------------------
 
 }
