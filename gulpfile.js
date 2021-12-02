@@ -12,7 +12,7 @@ const replace = require('gulp-replace');
 const generate_favicon = (done) => {
 
     favicon.generateFavicon({
-        masterPicture: './app/gulp/favicon.jpg',
+        masterPicture: './gulp/favicon.jpg',
         dest: './public',
         iconsPath: '/',
         design: {
@@ -67,7 +67,7 @@ const generate_favicon = (done) => {
             scalingAlgorithm: 'Mitchell',
             errorOnImageTooSmall: false
         },
-        markupFile: './app/gulp/favicon-data.json'
+        markupFile: './gulp/favicon-data.json'
 
     }, function() {
         gulp.src('./').pipe(notify({message: 'Favicon generated', onLast: true}));
@@ -80,19 +80,21 @@ const generate_favicon = (done) => {
 const create_component = () => {
     let options = minimist(process.argv.slice(3));
     if (options.name !== undefined && options.name !== true) {
-        if (!fs.existsSync('./app/Components/' + options.name)) {
-            return gulp.src('./app/gulp/component.template')
-                .pipe(replace('{{ page_name }}', options.name))
+        const componentPath = options.name.replace(".", "/");
+        const componentName = options.name.split(/[\/.]+/).pop();
+        if (!fs.existsSync('./app/Components/' + componentPath)) {
+            return gulp.src('./gulp/component.template')
+                .pipe(replace('{{ page_name }}', componentName))
                 .pipe(rename('index.js'))
-                .pipe(gulp.dest('./app/Components/' + options.name))
-                .pipe(gulp.src('./app/gulp/styles.template'))
-                .pipe(replace('{{ page_name }}', options.name))
-                .pipe(rename(options.name + '.module.scss'))
-                .pipe(gulp.dest('./app/Components/' + options.name))
-                .pipe(notify({ message: options.name + ' created', onLast: true }))
+                .pipe(gulp.dest('./app/Components/' + componentPath))
+                .pipe(gulp.src('./gulp/styles.template'))
+                .pipe(replace('{{ page_name }}', componentName))
+                .pipe(rename(componentName + '.module.scss'))
+                .pipe(gulp.dest('./app/Components/' + componentPath))
+                .pipe(notify({ message: componentName + ' created', onLast: true }))
         } else {
             return gulp.src('/')
-                .pipe(notify({ message: 'Error: ' + options.name + ' already exists', emitError: true }));
+                .pipe(notify({ message: 'Error: ' + componentName + ' already exists', emitError: true }));
         }
     } else {
         return gulp.src('/')
@@ -103,7 +105,7 @@ const create_component = () => {
 
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
-    console.log(" component -  gulp template --name Name");
+    console.log(" component -  gulp component --name=Name");
     console.log(" favicon   -  generate favicon\n\n");
     done();
 };
@@ -112,6 +114,6 @@ const help = (done) => {
 
 exports.default = help;
 exports.help = help;
-exports.component = create_component;
+exports[`make:component`] = create_component;
 exports.favicon = generate_favicon;
 
