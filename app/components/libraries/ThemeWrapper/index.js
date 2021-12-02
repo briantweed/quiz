@@ -1,39 +1,35 @@
-import {createContext, useContext, useEffect, useMemo, useState} from 'react';
-import {THEMES, COOKIE_THEME} from "../../../constants";
+import {createContext, useContext, useEffect, useState} from 'react';
 
 const AppContext = createContext({});
+const BODY_TAG = "body";
 
 
-export function ThemeWrapper({ children }) {
+export function ThemeWrapper({ children, themes, storageKey }) {
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem(COOKIE_THEME);
+        const storedTheme = localStorage.getItem(storageKey);
         if (storedTheme) {
             update(storedTheme);
         }
-    }, []);
+    });
 
-    const BODY_TAG = "body";
-
-    const options = useMemo(() => THEMES, [])
-
-    const {DEFAULT: { value: defaultValue }} = options;
-
+    
+    const {DEFAULT: { value: defaultValue }} = themes;
     const [theme, updateTheme] = useState(defaultValue);
 
 
     const label = (() => {
-        const key = Object.keys(options).filter(key => {
-            const option = options[key];
+        const key = Object.keys(themes).filter(key => {
+            const option = themes[key];
             return option.value === theme;
         })
-        return options[key].label;
+        return themes[key].label;
     })();
 
 
     const update = (theme) => {
         updateTheme(theme);
-        localStorage.setItem(COOKIE_THEME, theme);
+        localStorage.setItem(storageKey, theme);
         const element = document.querySelector(BODY_TAG);
         if (element) {
             element.classList.remove(...document.querySelector(BODY_TAG).classList);

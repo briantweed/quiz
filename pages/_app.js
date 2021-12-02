@@ -3,6 +3,7 @@ import {Provider} from "react-redux";
 import store from "@store";
 import {ThemeWrapper} from "@libraries/ThemeWrapper";
 import {AnimatePresence} from "framer-motion";
+import {THEMES, COOKIE_THEME} from "@constants";
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
 import '../global-styles.css';
@@ -15,7 +16,7 @@ function MyApp({Component, pageProps, router}) {
 
     return (
         <Provider store={store}>
-            <ThemeWrapper>
+            <ThemeWrapper themes={THEMES} storageKey={COOKIE_THEME}>
                 <AnimatePresence exitBeforeEnter>
                     <Component key={router.route} {...pageProps}/>
                 </AnimatePresence>

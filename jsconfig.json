@@ -7,6 +7,7 @@
             "@content/*": ["app/components/page-content/*"],
             "@libraries/*": ["app/components/libraries/*"],
             "@store": ["app/store/store"],
+            "@constants": ["app/constants/"],
             "@api/*": ["app/hooks/api/*"]
         }
     },
