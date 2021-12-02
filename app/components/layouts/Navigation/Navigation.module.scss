@@ -1,10 +1,22 @@
 .wrapper {
 
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center overflow-hidden;
     @apply transition-all duration-500 hover:transition-all hover:duration-500;
 
     a {
         @apply block mx-4 px-4 py-2 text-sm;
+        @apply transition-all duration-500;
+        box-shadow: 0 -3px 5px rgba(0,0,0,0);
+
+        &:hover {
+            box-shadow: 0 -3px 5px rgba(0,0,0,0.3);
+        }
+
+        &.active {
+            box-shadow: 0 -5px 12px rgba(0,0,0,0.5);
+            @apply transition-all duration-500;
+        }
+
     }
 
 

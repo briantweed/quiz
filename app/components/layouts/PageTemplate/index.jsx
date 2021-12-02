@@ -1,12 +1,10 @@
 import React from 'react';
 import LogRocket from 'logrocket';
-import {motion} from "framer-motion";
+
 import Head from "next/head";
 import Header from "@layouts/Header";
 import Navigation from "@layouts/Navigation";
-
-
-import {variants} from "./variants";
+import Content from "@components/libraries/Motion";
 
 
 class PageTemplate extends React.Component {
@@ -25,6 +23,8 @@ class PageTemplate extends React.Component {
 
 
     render() {
+
+        console.log('hi');
 
         return (
             <>
@@ -73,13 +73,7 @@ class PageTemplate extends React.Component {
 
                 <Navigation/>
 
-                <motion.div
-                    layout
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={variants}
-                >{ this.props.children }</motion.div>
+                <Content content={this.props.children}/>
 
             </>
         );
