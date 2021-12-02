@@ -2,7 +2,7 @@ import {useMemo} from "react";
 import {nanoid} from 'nanoid';
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
 
-import {THEMES} from "../../../constants";
+import {THEMES} from "@constants";
 import styles from './ThemeSwitch.module.scss';
 
 

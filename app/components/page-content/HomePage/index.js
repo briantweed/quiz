@@ -18,7 +18,7 @@ export default function HomePageContent() {
 
                 <div className={styles.content}>
                     <main>
-                        <div className="flex justify-center items-center h-half flex-col text-2xl">
+                        <div className="flex justify-center items-center h-half flex-col">
                            <ThemeSwitch/>
                         </div>
                     </main>

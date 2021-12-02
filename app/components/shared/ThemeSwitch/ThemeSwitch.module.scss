@@ -1,9 +1,9 @@
 .wrapper {
     @apply flex items-center;
+    @apply text-xl;
 
     select {
         @apply mx-4 pr-4;
-        @apply text-xl;
     }
 
 
