@@ -105,7 +105,7 @@ const create_component = () => {
 
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
-    console.log(" component -  gulp component --name=Name");
+    console.log(" make:component -  gulp make:component --name=Name");
     console.log(" favicon   -  generate favicon\n\n");
     done();
 };
@@ -115,5 +115,5 @@ const help = (done) => {
 exports.default = help;
 exports.help = help;
 exports[`make:component`] = create_component;
-exports.favicon = generate_favicon;
+exports[`favicon`] = generate_favicon;
 
