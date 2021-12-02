@@ -34,11 +34,11 @@ class PageTemplate extends React.Component {
                           content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"/>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
-                    <title>Quiz</title>
+                    <title>{ process.env.appName }</title>
 
-                    <meta name="subject" content="Quiz"/>
-                    <meta name="description" content="Quiz"/>
-                    <meta name="copyright" content="Quiz"/>
+                    <meta name="subject" content={process.env.appName}/>
+                    <meta name="description" content={process.env.appName}/>
+                    <meta name="copyright" content={process.env.appName}/>
                     <meta name="url" content=""/>
                     <meta name="identifier-URL" content=""/>
                     <meta name="language" content="en"/>
@@ -57,8 +57,8 @@ class PageTemplate extends React.Component {
 
                     <meta name="msapplication-TileColor" content="#ffffff"/>
                     <meta name="theme-color" content="#ffffff"/>
-                    <meta name="apple-mobile-web-app-title" content="Quiz"/>
-                    <meta name="application-name" content="Quiz"/>
+                    <meta name="apple-mobile-web-app-title" content={process.env.appName}/>
+                    <meta name="application-name" content={process.env.appName}/>
 
                     <meta name="robots" content="index,follow"/>
                     <meta name="googlebot" content="index,follow"/>

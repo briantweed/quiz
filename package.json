@@ -1,5 +1,5 @@
 {
-  "name": "quiz",
+  "name": "theme-test",
   "private": true,
   "scripts": {
     "dev": "next dev",

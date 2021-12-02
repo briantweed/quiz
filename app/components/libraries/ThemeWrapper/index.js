@@ -1,6 +1,6 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 
-const AppContext = createContext({});
+const ThemeContext = createContext({});
 const BODY_TAG = "body";
 
 
@@ -44,14 +44,14 @@ export function ThemeWrapper({ children, themes, storageKey }) {
 
 
     return (
-        <AppContext.Provider value={{theme, label, methods: {update, implode}}}>
+        <ThemeContext.Provider value={{theme, label, methods: {update, implode}}}>
             { children }
-        </AppContext.Provider>
+        </ThemeContext.Provider>
     );
 
 }
 
 
 export function useThemeWrapper() {
-    return useContext(AppContext);
+    return useContext(ThemeContext);
 }

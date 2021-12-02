@@ -12,7 +12,7 @@ const replace = require('gulp-replace');
 const generate_favicon = (done) => {
 
     favicon.generateFavicon({
-        masterPicture: './app/gulp/favicon.png',
+        masterPicture: './app/gulp/favicon.jpg',
         dest: './public',
         iconsPath: '/',
         design: {
@@ -24,7 +24,7 @@ const generate_favicon = (done) => {
                     precomposedIcons: false,
                     declareOnlyDefaultIcon: true
                 },
-                appName: "IOA Claims Portal"
+                appName: "Theme Test"
             },
             desktopBrowser: {},
             windows: {
@@ -40,7 +40,7 @@ const generate_favicon = (done) => {
                         rectangle: false
                     }
                 },
-                appName: "IOA Claims Portal"
+                appName: "Theme Test"
             },
             androidChrome: {
                 pictureAspect: 'noChange',

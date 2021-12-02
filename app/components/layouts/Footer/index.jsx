@@ -10,7 +10,11 @@ export default function Footer() {
 
     return (
         <footer className={wrapperStyles}>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/briantweed/quiz/tree/main/app/components/libraries/ThemeWrapper"><BsGithub/> view on GitHub</a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/briantweed/quiz/tree/main/app/components/libraries/ThemeWrapper"
+            ><BsGithub/>View on GitHub</a>
         </footer>
     )
 }
