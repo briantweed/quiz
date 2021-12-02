@@ -14,7 +14,7 @@ export function ThemeWrapper({ children, themes, storageKey }) {
         }
     });
 
-    
+
     const {DEFAULT: { value: defaultValue }} = themes;
 
     const [theme, updateTheme] = useState(defaultValue);
@@ -30,12 +30,21 @@ export function ThemeWrapper({ children, themes, storageKey }) {
 
 
     const update = (theme) => {
-        updateTheme(theme);
-        localStorage.setItem(storageKey, theme);
-        const element = document.querySelector(BODY_TAG);
-        if (element) {
-            element.classList.remove(...document.querySelector(BODY_TAG).classList);
-            document.querySelector("body").classList.add(theme);
+        const checkTheme = (theme) => {
+            return !!(Object.keys(themes).find(key => {
+                const option = themes[key];
+                return option.value === theme;
+            }))
+        }
+
+        if (checkTheme(theme)) {
+            updateTheme(theme);
+            localStorage.setItem(storageKey, theme);
+            const element = document.querySelector(BODY_TAG);
+            if (element) {
+                element.classList.remove(...document.querySelector(BODY_TAG).classList);
+                document.querySelector("body").classList.add(theme);
+            }
         }
     }
 
