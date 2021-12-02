@@ -7,7 +7,10 @@
 
     select {
         @apply mx-4 pr-4;
-        @apply border-b;
+        @apply border-b border-transparent;
+        @apply transition-border transition-bg duration-500;
+        @apply hover:transition-border hover:transition-bg hover:duration-500;
+        @apply cursor-pointer;
         outline: none;
     }
 
@@ -17,14 +20,14 @@
     &.default {
 
         select {
-            @apply border-gray-dark;
+            @apply hover:border-gray-dark;
         }
     }
 
     &.dark {
 
         select {
-            @apply bg-gray-darkest border-blue-lightest;
+            @apply bg-gray-darkest hover:border-blue-lightest;
         }
 
     }
@@ -32,7 +35,7 @@
     &.dracula {
 
         select {
-            @apply bg-black border-red-light;
+            @apply bg-black hover:border-red-light;
         }
 
     }

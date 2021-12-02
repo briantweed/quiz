@@ -1,8 +1,6 @@
-import React from "react";
 import dynamic from "next/dynamic";
-import ThemeSwitch from "@components/shared/ThemeSwitch";
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
-import styles from './HomePage.module.scss';
+import styles from './DrivingConditionsPage.module.scss';
 
 const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
 
@@ -17,13 +15,11 @@ export default function HomePageContent() {
 
             <div className={wrapperStyles}>
 
-                <div className={styles.content}>
-                    <main>
-                        <div className="flex justify-center items-center h-half flex-col">
-                           <ThemeSwitch/>
-                        </div>
-                    </main>
-                </div>
+                <main>
+
+                    <h1 className={styles.small}>Choose your favorite driving conditions</h1>
+
+                </main>
 
             </div>
 

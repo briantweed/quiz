@@ -37,6 +37,8 @@ module.exports = {
         hover: '#dc2553',
         DEFAULT: '#d11242',
         dark: '#9d101f',
+        darker: '#7a0a16',
+        darkest: '#4d050c',
       },
       gray: {
         darkest: '#333333',
@@ -519,12 +521,12 @@ module.exports = {
       width: ['responsive'],
       margin: ['responsive'],
       backgroundColor: ['hover', 'disabled'],
+      transitionDuration: ['hover'],
       transitionProperty: ['hover'],
       textDecoration: ['hover'],
       textColor:['hover'],
       borderColor:['hover'],
-      boxShadow:['hover'],
-      scale:['hover'],
+      borderWidth:['hover'],
     }
   }
 

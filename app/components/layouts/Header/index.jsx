@@ -1,6 +1,7 @@
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
 
 import styles from './Header.module.scss';
+import Light from "@components/shared/Light";
 
 
 export default function Header() {
@@ -13,8 +14,8 @@ export default function Header() {
 
             <div className={styles.content}>
 
-                <h1 className={styles.title}>Theme <span className="font-light">Test</span></h1>
-                <h2 className={styles.theme}>{ label } <span className="font-light">Theme</span></h2>
+                <h1 className={styles.title}>Theme <Light>Test</Light></h1>
+                <h2 className={styles.theme}>{ label } <Light>Theme</Light></h2>
 
             </div>
 

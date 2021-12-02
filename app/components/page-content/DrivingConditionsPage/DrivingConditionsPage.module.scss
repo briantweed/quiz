@@ -1,19 +1,21 @@
 .wrapper {
 
-
+    h1.small {
+        @apply text-xl;
+    }
 
     // ----- THEMES -----------------------------
 
     &.default {
-
+        @apply text-gray-darker;
     }
 
     &.dark {
-
+        @apply text-gray-lightest;
     }
 
     &.dracula {
-
+        @apply text-red-light;
     }
 
     // ------------------------------------------

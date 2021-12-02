@@ -79,9 +79,9 @@ const generate_favicon = (done) => {
 
 const create_component = () => {
     let options = minimist(process.argv.slice(3));
-    if (options.name !== undefined && options.name !== true) {
-        const componentPath = options.name.replace(".", "/");
-        const componentName = options.name.split(/[\/.]+/).pop();
+    if (options.component !== undefined && options.component !== true) {
+        const componentPath = options.component.replace(".", "/");
+        const componentName = options.component.split(/[\/.]+/).pop();
         if (!fs.existsSync('./app/Components/' + componentPath)) {
             return gulp.src('./gulp/component.template')
                 .pipe(replace('{{ page_name }}', componentName))
@@ -105,7 +105,7 @@ const create_component = () => {
 
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
-    console.log(" make:component -  gulp make:component --name=Name");
+    console.log(" make -  gulp make --component=Name");
     console.log(" favicon   -  generate favicon\n\n");
     done();
 };
@@ -114,6 +114,6 @@ const help = (done) => {
 
 exports.default = help;
 exports.help = help;
-exports[`make:component`] = create_component;
-exports[`favicon`] = generate_favicon;
+exports.make = create_component;
+exports.favicon = generate_favicon;
 
