@@ -1,15 +1,22 @@
-body {
-    overflow: hidden;
+html, body {
+    font-size: 100%;
+    transition: all 0.5s ease;
 }
 
 body.default {
+    color: #333333;
     background: white;
+    transition: all 0.5s ease;
 }
 
 body.dark {
+    color: #2b9ad9;
     background: #333333;
+    transition: all 0.5s ease;
 }
 
 body.dracula {
+    color: #d11242;
     background: #000000;
+    transition: all 0.5s ease;
 }

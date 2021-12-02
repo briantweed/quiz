@@ -1,33 +1,8 @@
 .wrapper {
-    @apply transition-all duration-500;
-    height: calc(100vh - 45px);
 
     .content {
         @apply container;
         @apply pt-12;
     }
-
-
-    // ----- THEMES -----------------------------
-
-    &.default {
-        @apply bg-white;
-        @apply text-gray-darkest;
-        @apply transition-all duration-500;
-    }
-
-    &.dark {
-        @apply bg-gray-darkest;
-        @apply text-blue-lightest;
-        @apply transition-all duration-500;
-    }
-
-    &.dracula {
-        @apply bg-black;
-        @apply text-red;
-        @apply transition-all duration-500;
-    }
-
-    // ------------------------------------------
 
 }

@@ -1,5 +1,5 @@
 import {createContext, useContext, useEffect, useMemo, useState} from 'react';
-import {THEMES, COOKIE_THEME, BODY_TAG} from "../../../constants";
+import {THEMES, COOKIE_THEME} from "../../../constants";
 
 const AppContext = createContext({});
 
@@ -12,6 +12,8 @@ export function ThemeWrapper({ children }) {
             update(storedTheme);
         }
     }, []);
+
+    const BODY_TAG = "body";
 
     const options = useMemo(() => THEMES, [])
 
@@ -54,6 +56,6 @@ export function ThemeWrapper({ children }) {
 }
 
 
-export function useAppContext() {
+export function useThemeWrapper() {
     return useContext(AppContext);
 }

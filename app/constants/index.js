@@ -1,5 +1,3 @@
-export const BODY_TAG = "body";
-
 export const THEMES = {
     DEFAULT: {
         value: "default",

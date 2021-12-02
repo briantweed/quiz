@@ -1,0 +1,12 @@
+.wrapper {
+    @apply text-center;
+
+    a {
+
+        &:hover {
+            border-bottom: 1px solid;
+        }
+
+    }
+
+}

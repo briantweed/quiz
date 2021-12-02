@@ -20,17 +20,14 @@
     &.default {
         @apply bg-gray-lighter;
         @apply text-blue-darkest;
-        @apply transition-all duration-500;
     }
 
     &.dark {
         @apply bg-blue-darkest text-gray-lightest;
-        @apply transition-all duration-500;
     }
 
     &.dracula {
         @apply bg-black text-red;
-        @apply transition-all duration-500;
     }
 
     // ------------------------------------------
