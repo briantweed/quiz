@@ -1,6 +1,9 @@
 .wrapper {
     @apply flex items-center;
-    @apply text-xl;
+
+    label {
+        @apply text-xl;
+    }
 
     select {
         @apply mx-4 pr-4;

@@ -14,7 +14,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/briantweed/quiz/tree/main/app/components/libraries/ThemeWrapper"
-            ><BsGithub/>View on GitHub</a>
+            ><BsGithub/>Visit <span className="font-light">GitHub</span></a>
         </footer>
     )
 }
