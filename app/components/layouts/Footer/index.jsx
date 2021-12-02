@@ -8,7 +8,7 @@ export default function Footer() {
 
     return (
         <footer className={wrapperStyles}>
-            <a href="https://github.com/briantweed/quiz">https://github.com/briantweed/quiz</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/briantweed/quiz">https://github.com/briantweed/quiz</a>
         </footer>
     )
 }
