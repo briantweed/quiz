@@ -21,7 +21,7 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       blue: {
-        lightest: '#2b9ad9',
+        lightest: '#96CEEE',
         lighter: '#127acb',
         light: '#0667b2',
         hover: '#0667b2',

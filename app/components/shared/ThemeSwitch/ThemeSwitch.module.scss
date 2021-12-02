@@ -11,17 +11,12 @@
 
     &.default {
 
-        select {
-            @apply text-gray-darkest;
-        }
-
     }
 
     &.dark {
 
         select {
             @apply bg-black;
-            @apply text-blue-lightest;
         }
 
     }
@@ -30,7 +25,6 @@
 
         select {
             @apply bg-black;
-            @apply text-red;
         }
 
     }
