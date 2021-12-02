@@ -7,6 +7,11 @@
             border-bottom: 1px solid;
         }
 
+        svg {
+            @apply inline-block mr-1;
+            margin-bottom: 2px;
+        }
+
     }
 
 }

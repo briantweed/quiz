@@ -1,5 +1,7 @@
 import styles from './Footer.module.scss';
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
+import { BsGithub } from "react-icons/bs";
+
 
 export default function Footer() {
 
@@ -8,7 +10,7 @@ export default function Footer() {
 
     return (
         <footer className={wrapperStyles}>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/briantweed/quiz">https://github.com/briantweed/quiz</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/briantweed/quiz"><BsGithub/> view on GitHub</a>
         </footer>
     )
 }
