@@ -1,0 +1,27 @@
+.wrapper {
+
+    @apply flex items-center justify-center;
+    @apply transition-all duration-500 hover:transition-all hover:duration-500;
+
+    a {
+        @apply block mx-4 px-4 py-2 text-sm;
+    }
+
+
+    // ----- THEMES -----------------------------
+
+    &.default {
+        @apply bg-gray-lightest text-gray-darker;
+    }
+
+    &.dark {
+        @apply bg-blue-dark text-gray-light;
+    }
+
+    &.dracula {
+        @apply bg-red-darker text-gray-light;
+    }
+
+    // ------------------------------------------
+
+}
