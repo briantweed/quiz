@@ -7,6 +7,8 @@
 
     select {
         @apply mx-4 pr-4;
+        @apply border-b;
+        outline: none;
     }
 
 
@@ -14,12 +16,15 @@
 
     &.default {
 
+        select {
+            @apply border-gray-dark;
+        }
     }
 
     &.dark {
 
         select {
-            @apply bg-black;
+            @apply bg-gray-darkest border-blue-lightest;
         }
 
     }
@@ -27,7 +32,7 @@
     &.dracula {
 
         select {
-            @apply bg-black;
+            @apply bg-black border-red-light;
         }
 
     }
