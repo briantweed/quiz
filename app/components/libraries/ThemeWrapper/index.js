@@ -1,6 +1,7 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 
 const ThemeContext = createContext({});
+
 const BODY_TAG = "body";
 
 
@@ -15,6 +16,7 @@ export function ThemeWrapper({ children, themes, storageKey }) {
 
     
     const {DEFAULT: { value: defaultValue }} = themes;
+
     const [theme, updateTheme] = useState(defaultValue);
 
 
