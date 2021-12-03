@@ -1,10 +1,8 @@
-import React from "react";
-import dynamic from "next/dynamic";
-import ThemeSwitch from "@components/shared/ThemeSwitch";
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
 import styles from './HomePage.module.scss';
 
-const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
+import PageTemplate from "@layouts/PageTemplate";
+import ThemeSwitch from "@components/shared/ThemeSwitch";
+import {useThemeWrapper} from "@libraries/ThemeWrapper";
 
 
 export default function HomePageContent() {

@@ -1,13 +1,12 @@
 import styles from './DrivingConditionsPage.module.scss';
 
 import {useMemo} from "react";
-import dynamic from "next/dynamic";
 import {nanoid} from "nanoid";
+import PageTemplate from "@layouts/PageTemplate";
+import Light from "@components/shared/Light";
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
 import {CONDITIONS} from "@constants";
-import Light from "@components/shared/Light";
 
-const PageTemplate = dynamic(() => import("@layouts/PageTemplate").then());
 
 
 export default function HomePageContent() {
