@@ -29,8 +29,7 @@ class PageTemplate extends React.Component {
 
                 <Head>
                     <meta charSet="UTF-8"/>
-                    <meta name="viewport"
-                          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"/>
+                    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"/>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
                     <title>{ process.env.appName }</title>
@@ -38,12 +37,10 @@ class PageTemplate extends React.Component {
                     <meta name="subject" content={process.env.appName}/>
                     <meta name="description" content={process.env.appName}/>
                     <meta name="copyright" content={process.env.appName}/>
-                    <meta name="url" content=""/>
-                    <meta name="identifier-URL" content=""/>
+                    <meta name="url" content={process.env.appURL}/>
+                    <meta name="identifier-URL" content={process.env.appURL}/>
+                    <meta name="canonical" content={process.env.appURL}/>
                     <meta name="language" content="en"/>
-                    <meta name="Classification" content="Business"/>
-                    <meta name="reply-to" content="no-reply@fake-email-address.com"/>
-                    <meta name="owner" content=""/>
                     <meta name="rating" content="General"/>
                     <meta name="MobileOptimized" content="350"/>
                     <meta name="revised" content="Wednesday, December 1st, 2021, 09:00am"/>

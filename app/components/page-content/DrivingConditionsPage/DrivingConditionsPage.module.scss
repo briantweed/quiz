@@ -45,7 +45,7 @@
     &.dracula {
 
         .tile {
-            @apply border-2 hover:bg-gray-despair hover:text-gray-light;
+            @apply border-2 hover:bg-gray-despair;
 
             &.active:before {
                 @apply border-red-light bg-red-light hover:bg-red-light;
@@ -58,7 +58,7 @@
     &.contrast {
 
         .tile {
-            @apply border-2 hover:bg-yellow hover:text-black;
+            @apply border-2 hover:bg-yellow hover:text-black hover:border-blue-lighter;
 
             &.active:before {
                 @apply border-yellow bg-yellow hover:bg-yellow;

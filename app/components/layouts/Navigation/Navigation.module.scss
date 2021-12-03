@@ -29,18 +29,33 @@
         .active {
             @apply bg-white;
         }
+
     }
 
     &.dark {
-        @apply bg-blue-dark text-gray-light;
+        @apply bg-gray-despair text-gray-light;
+
+        .active {
+            @apply bg-gray-darkest;
+        }
+
     }
 
     &.dracula {
         @apply bg-red-darker text-gray-light;
+
+        .active {
+            @apply bg-black text-red-light;
+        }
+
     }
 
     &.contrast {
         @apply bg-yellow text-black;
+
+        .active {
+            @apply bg-black text-yellow;
+        }
 
         a {
             @apply text-lg;

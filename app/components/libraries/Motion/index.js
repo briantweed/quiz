@@ -5,6 +5,8 @@ import {variants} from "@variants/page";
 export default function Motion({ children }) {
     return (
         <motion.div
+            layout
+            key={'pageContent'}
             initial="initial"
             animate="animate"
             exit="exit"
