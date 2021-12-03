@@ -4,8 +4,7 @@ import LogRocket from 'logrocket';
 import Head from "next/head";
 import Header from "@layouts/Header";
 import Navigation from "@layouts/Navigation";
-import {motion} from "framer-motion";
-import {variants} from "@variants/page";
+import Motion from "@libraries/Motion";
 
 
 class PageTemplate extends React.Component {
@@ -24,8 +23,6 @@ class PageTemplate extends React.Component {
 
 
     render() {
-
-        console.log('hi');
 
         return (
             <>
@@ -74,18 +71,9 @@ class PageTemplate extends React.Component {
 
                 <Navigation/>
 
-                <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={variants}
-                    onAnimationStart={() => document.body.classList.add("overflow-hidden")}
-                    onAnimationComplete={() =>
-                        document.body.classList.remove("overflow-hidden")
-                    }
-                >
-                    { this.props.children}
-                </motion.div>
+                <Motion>
+                    { this.props.children }
+                </Motion>
 
             </>
         );
