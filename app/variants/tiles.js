@@ -5,7 +5,7 @@ module.exports = {
         animate: {
             opacity: 1,
             transition: {
-                delayChildren: 0.2,
+                delayChildren: 0.15,
                 staggerChildren: 0.1,
             }
         },
