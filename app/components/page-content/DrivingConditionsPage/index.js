@@ -4,7 +4,7 @@ import {useMemo} from "react";
 import {nanoid} from "nanoid";
 import {useThemeWrapper} from "@libraries/ThemeWrapper";
 import {CONDITIONS} from "@constants";
-import {container, item} from "@variants/tiles"
+import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";
 import { motion } from "framer-motion"
 
