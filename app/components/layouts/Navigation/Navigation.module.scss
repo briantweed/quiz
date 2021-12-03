@@ -43,11 +43,11 @@
             @apply text-lg;
 
             &:hover {
-                box-shadow: 0 -1px 5px rgba(150,150,210,0.4);
+                box-shadow: 0 -1px 5px rgba(140,140,190,0.3);
             }
 
             &.active {
-                box-shadow: 0 -1px 10px rgba(150,150,210,0.7);
+                box-shadow: 0 -1px 10px rgba(140,140,190,0.5);
             }
 
         }

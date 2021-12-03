@@ -41,8 +41,8 @@ export default function HomePageContent() {
                                         variants={item}
                                         transition={{ type: 'spring' }}
                                         onClick={() => update(option.value)}
-                                        className={implode([styles.tile, option.value === theme ? styles.active : ''])}
-                                    >{option.label}</motion.li>
+                                        className={styles.tile + " " + (option.value === theme ? styles.active : '') }
+                                    >{ option.label }</motion.li>
                                 )
                             })}
                         </motion.ul>
