@@ -13,7 +13,7 @@ export const THEMES = {
     },
     CONTRAST: {
         value: "contrast",
-        label: "High Contrast"
+        label: "Hi-Vis"
     }
 }
 

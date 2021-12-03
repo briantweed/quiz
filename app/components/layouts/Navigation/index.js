@@ -14,14 +14,20 @@ export default function Navigation() {
 
 
     return (
-        <div className={wrapperStyles}>
-            <Link href={'/'}>
-                <a className={router.asPath === '/' ? styles.active : ''}>Select <Light>Theme</Light></a>
-            </Link>
-            <Link href={'/driving-conditions'}>
-                <a className={router.asPath === '/driving-conditions' ? styles.active : ''}>Driving <Light>Conditions</Light></a>
-            </Link>
-        </div>
+        <nav className={wrapperStyles}>
+            <ol>
+                <li>
+                    <Link href={'/'}>
+                        <a className={router.asPath === '/' ? styles.active : ''}>Select <Light>Theme</Light></a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href={'/driving-conditions'}>
+                        <a className={router.asPath === '/driving-conditions' ? styles.active : ''}>Driving <Light>Conditions</Light></a>
+                    </Link>
+                </li>
+            </ol>
+        </nav>
     )
 
 }
