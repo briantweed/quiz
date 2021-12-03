@@ -1,12 +1,7 @@
-import dynamic from "next/dynamic";
-
-const DrivingConditionsPage = dynamic(() => import("@content/DrivingConditionsPage").then());
-
+import DrivingConditionsPage from "@content/DrivingConditionsPage";
 
 export default function Page() {
-
     return (
         <DrivingConditionsPage/>
     )
-
 }

@@ -1,10 +1,5 @@
-import dynamic from "next/dynamic";
-
-const HomePage = dynamic(() => import("@content/HomePage").then());
-
+import HomePage from "@content/HomePage";
 
 export default function Page() {
-
     return <HomePage/>
-
 }
