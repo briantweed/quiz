@@ -6,6 +6,7 @@
             "@layouts/*": ["app/components/layouts/*"],
             "@content/*": ["app/components/page-content/*"],
             "@libraries/*": ["app/components/libraries/*"],
+            "@variants/*": ["app/variants/*"],
             "@store": ["app/store/store"],
             "@constants": ["app/constants/"],
             "@api/*": ["app/hooks/api/*"]
