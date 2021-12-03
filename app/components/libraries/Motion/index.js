@@ -10,9 +10,7 @@ export default function Motion({ children }) {
             exit="exit"
             variants={variants}
             onAnimationStart={() => document.body.classList.add("overflow-hidden")}
-            onAnimationComplete={() =>
-                document.body.classList.remove("overflow-hidden")
-            }
+            onAnimationComplete={() => document.body.classList.remove("overflow-hidden")}
         >{ children }</motion.div>
     )
 }
