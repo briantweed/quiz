@@ -20,7 +20,7 @@
     &.default {
 
         select {
-            @apply hover:border-gray-dark;
+            @apply bg-white hover:border-gray-dark;
         }
     }
 

@@ -1,7 +1,73 @@
 .wrapper {
 
-    h1.small {
-        @apply text-xl;
+    .tile {
+        @apply relative border cursor-pointer p-8 rounded flex-grow m-4 ml-0 text-center;
+        @apply transition-all duration-500 hover:duration-500;
+
+        &.active:before {
+            @apply absolute rounded-full border-2 -bottom-4;
+            @apply transition-all duration-500 hover:duration-500;
+            content: "";
+            left: calc(50% - 2px);
+        }
+
     }
+
+
+    // ----- THEMES -----------------------------
+
+    &.default {
+
+        .tile {
+            @apply hover:text-black hover:bg-gray-lighter;
+
+            &.active:before {
+                @apply border-black bg-black;
+            }
+
+        }
+
+    }
+
+    &.dark {
+
+        .tile {
+            @apply hover:bg-gray-despair hover:text-white;
+
+            &.active:before {
+                @apply border-blue-lightest bg-blue-lightest;
+            }
+
+        }
+
+    }
+
+    &.dracula {
+
+        .tile {
+            @apply border-2 hover:bg-gray-despair hover:text-gray-light;
+
+            &.active:before {
+                @apply border-red-light bg-red-light hover:bg-red-light;
+            }
+
+        }
+
+    }
+
+    &.contrast {
+
+        .tile {
+            @apply border-2 hover:bg-yellow hover:text-black;
+
+            &.active:before {
+                @apply border-yellow bg-yellow hover:bg-yellow;
+            }
+
+        }
+
+    }
+
+    // ------------------------------------------
 
 }

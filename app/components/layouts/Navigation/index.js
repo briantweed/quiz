@@ -14,7 +14,7 @@ export default function Navigation() {
 
 
     return (
-        <nav className={wrapperStyles}>
+        <nav role="navigation" className={wrapperStyles}>
             <ol>
                 <li>
                     <Link href={'/'}>

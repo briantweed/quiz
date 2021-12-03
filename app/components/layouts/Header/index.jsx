@@ -10,7 +10,7 @@ export default function Header() {
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (
-        <div className={wrapperStyles}>
+        <div role="banner" className={wrapperStyles}>
 
             <div className={styles.content}>
 

@@ -25,6 +25,10 @@
 
     &.default {
         @apply bg-gray-lightest text-gray-darker;
+
+        .active {
+            @apply bg-white;
+        }
     }
 
     &.dark {

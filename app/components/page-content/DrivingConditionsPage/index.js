@@ -17,29 +17,35 @@ export default function HomePageContent() {
 
     const options = useMemo(() => CONDITIONS, []);
 
+
     return (
         <PageTemplate>
 
             <div className={wrapperStyles}>
 
-                <main>
+                <main role="main">
 
                     <div className="container flex justify-center mt-16">
                         <div className="w-3/4">
 
-                            <h1 className="text-2xl"><Light>Choose your favorite</Light> driving condition:</h1>
+                            <form>
 
-                            <div className="flex justify-evenly items-center mt-8">
-                                {Object.keys(options).map(key => {
-                                    const option = options[key];
-                                    return (
-                                        <div key={nanoid()}
-                                             onClick={() => update(option.value)}
-                                             className="border cursor-pointer p-8 rounded flex-grow m-4 ml-0 text-center border-grey-dark"
-                                        >{ option.label }</div>
-                                    )
-                                })}
-                            </div>
+                                <h1 className="text-2xl"><Light>Choose your favorite</Light> driving condition:</h1>
+
+                                <ul className="flex justify-evenly items-center mt-8">
+                                    {Object.keys(options).map(key => {
+                                        const option = options[key];
+                                        return (
+                                            <li key={nanoid()}
+                                                 onClick={() => update(option.value)}
+                                                 className={implode([styles.tile, option.value === theme ? styles.active : ''])}
+                                            >{ option.label }</li>
+                                        )
+                                    })}
+                                </ul>
+
+                            </form>
+
                         </div>
                     </div>
 

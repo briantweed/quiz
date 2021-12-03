@@ -18,7 +18,7 @@ export default function HomePageContent() {
             <div className={wrapperStyles}>
 
                 <div className={styles.content}>
-                    <main>
+                    <main role="main">
                         <div className="flex justify-center items-center h-half flex-col">
                            <ThemeSwitch/>
                         </div>
