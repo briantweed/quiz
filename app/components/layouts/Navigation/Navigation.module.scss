@@ -6,11 +6,6 @@
         a {
             @apply block mx-4 px-4 py-2 text-sm;
             @apply transition-all duration-500;
-            box-shadow: 0 -3px 5px rgba(0,0,0,0);
-
-            &:hover {
-                box-shadow: 0 -3px 5px rgba(0,0,0,0.3);
-            }
 
             &.active {
                 box-shadow: 0 -3px 14px rgba(0,0,0,0.4);
@@ -26,9 +21,19 @@
     &.default {
         @apply bg-gray-lightest text-gray-darker;
 
-        .active {
-            @apply bg-white;
+        a {
+            box-shadow: 0 -3px 5px rgba(0,0,0,0);
+
+            &:hover {
+                box-shadow: 0 -3px 5px rgba(0,0,0,0.3);
+            }
+
+            &.active {
+                @apply bg-white;
+            }
+
         }
+
 
     }
 
@@ -87,6 +92,6 @@
 
     }
 
-    // ------------------------------------------
+    // ----------------------------------------*-
 
 }

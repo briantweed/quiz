@@ -1,14 +1,24 @@
 .wrapper {
 
     .tile {
-        @apply relative border cursor-pointer p-8 rounded flex-grow m-4 ml-0 text-center;
-        @apply transition-all duration-500 hover:duration-500;
+        @apply relative;
+        @apply flex-grow;
+        @apply p-8 m-4 ml-0;
+        @apply border rounded;
+        @apply cursor-pointer;
+        @apply transition-all duration-500;
+        @apply hover:duration-500;
+
+        &:before {
+
+        }
 
         &.active:before {
-            @apply absolute rounded-full border-2 -bottom-4;
-            @apply transition-all duration-500 hover:duration-500;
             content: "";
+            @apply absolute -bottom-4;
             left: calc(50% - 2px);
+            @apply  border-2 rounded-full;
+            @apply transition-all duration-500;
         }
 
     }
@@ -19,10 +29,10 @@
     &.default {
 
         .tile {
-            @apply hover:text-black hover:bg-gray-lighter;
+            @apply hover:bg-gray-lighter hover:text-black;
 
             &.active:before {
-                @apply border-black bg-black;
+                @apply bg-black border-black;
             }
 
         }
@@ -35,7 +45,7 @@
             @apply hover:bg-gray-despair hover:text-white;
 
             &.active:before {
-                @apply border-blue-lightest bg-blue-lightest;
+                @apply bg-blue-lightest border-blue-lightest;
             }
 
         }
@@ -48,7 +58,8 @@
             @apply border-2 hover:bg-gray-despair;
 
             &.active:before {
-                @apply border-red-light bg-red-light hover:bg-red-light;
+                @apply bg-red-light border-red-light;
+                @apply hover:bg-red-light;
             }
 
         }
@@ -58,16 +69,18 @@
     &.contrast {
 
         .tile {
-            @apply border-2 hover:bg-yellow hover:text-black hover:border-blue-lighter;
+            @apply border-2;
+            @apply hover:bg-yellow hover:border-blue-lighter hover:text-black;
 
             &.active:before {
-                @apply border-yellow bg-yellow hover:bg-yellow;
+                @apply bg-yellow border-yellow;
+                @apply hover:bg-yellow;
             }
 
         }
 
     }
 
-    // ------------------------------------------
+    // ----------------------------------------*-
 
 }

@@ -1,8 +1,9 @@
 'use strict';
 
 const fs = require('fs');
-const favicon = require ('gulp-real-favicon');
+const favicon = require('gulp-real-favicon');
 const gulp = require('gulp');
+const glob = require('glob');
 const minimist = require('minimist');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
@@ -69,7 +70,7 @@ const generate_favicon = (done) => {
         },
         markupFile: './gulp/favicon-data.json'
 
-    }, function() {
+    }, function () {
         gulp.src('./').pipe(notify({message: 'Favicon generated', onLast: true}));
         done();
     });
@@ -91,17 +92,42 @@ const create_component = () => {
                 .pipe(replace('{{ page_name }}', componentName))
                 .pipe(rename(componentName + '.module.scss'))
                 .pipe(gulp.dest('./app/Components/' + componentPath))
-                .pipe(notify({ message: componentName + ' created', onLast: true }))
+                .pipe(notify({message: componentName + ' created', onLast: true}))
         } else {
             return gulp.src('/')
-                .pipe(notify({ message: 'Error: ' + componentName + ' already exists', emitError: true }));
+                .pipe(notify({message: 'Error: ' + componentName + ' already exists', emitError: true}));
         }
     } else {
         return gulp.src('/')
-            .pipe(notify({ message: 'Error: filename required', emitError: true }));
+            .pipe(notify({message: 'Error: filename required', emitError: true}));
     }
 };
 
+const add_theme = () => {
+    const dir = './app/components/**/*.scss';
+
+    return glob(dir, {}, function (er, files) {
+
+        files.map(file => {
+
+            return gulp.src(file)
+                .pipe(replace('// ----------------------------------------*-',
+                    `.test {
+
+                    }
+
+                    ----------------------------------------*-`
+                ))
+                .pipe(gulp.dest(file))
+                .pipe(notify({message: 'theme added', onLast: true}));
+
+
+        })
+
+    })
+
+
+};
 
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
@@ -111,9 +137,9 @@ const help = (done) => {
 };
 
 
-
 exports.default = help;
 exports.help = help;
 exports.make = create_component;
 exports.favicon = generate_favicon;
+exports.theme = add_theme;
 
