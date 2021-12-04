@@ -1,40 +1,41 @@
-export const THEMES = {
-    DEFAULT: {
+export const THEMES = [
+    {
         value: "default",
         label: "Default"
     },
-    DARK: {
+    {
         value: "dark",
         label: "Dark"
     },
-    DRACULA: {
+    {
         value: "dracula",
         label: "Dracula"
     },
-    CONTRAST: {
+    {
         value: "contrast",
         label: "Hi-Vis"
     }
-}
+]
 
 
-export const CONDITIONS =  {
-    DEFAULT: {
+export const CONDITIONS =  [
+    {
         value: "default",
         label: "Daytime"
     },
-    DARK: {
+    {
         value: "dark",
         label: "Evening"
     },
-    CONTRAST: {
+    {
         value: "contrast",
         label: "Night"
     },
-    DRACULA: {
+    {
         value: "dracula",
         label: "Red Eye"
     }
-}
+]
+
 
 export const COOKIE_THEME = 'theme';

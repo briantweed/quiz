@@ -17,8 +17,7 @@ export default function ThemeSwitch({theme, methods:{update, implode}}) {
             <label htmlFor="themeSwitch">Select <Light>Theme:</Light></label>
 
             <select value={theme} name="theme" id="themeSwitch" onChange={(event) => update(event.target.value)}>
-                {Object.keys(options).map(key => {
-                    const option = options[key];
+                {options.map(option => {
                     return (
                         <option key={nanoid()} value={option.value}>{ option.label }</option>
                     )

@@ -2,6 +2,7 @@ import {createContext, useContext, useEffect, useState} from 'react';
 
 const ThemeContext = createContext({});
 const BODY_TAG = "body";
+const DEFAULT_THEME = "default";
 
 
 export function Theme({ children, themes, storageKey }) {
@@ -14,24 +15,20 @@ export function Theme({ children, themes, storageKey }) {
     });
 
 
-    const {DEFAULT: { value: defaultValue }} = themes;
-
-    const [theme, updateTheme] = useState(defaultValue);
+    const [theme, updateTheme] = useState(DEFAULT_THEME);
 
 
     const label = (() => {
-        const key = Object.keys(themes).filter(key => {
-            const option = themes[key];
+        const selectedTheme = themes.filter(option => {
             return option.value === theme;
         })
-        return themes[key].label;
+        return selectedTheme.label;
     })();
 
 
     const update = (theme) => {
         const checkTheme = (theme) => {
-            return !!(Object.keys(themes).find(key => {
-                const option = themes[key];
+            return !!(themes.find(option => {
                 return option.value === theme;
             }))
         }
