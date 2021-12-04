@@ -9,15 +9,14 @@ import Light from "@components/shared/Light";
 export default function ThemeSwitch({theme, methods:{update, implode}}) {
 
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
-
-    const options = useMemo(() => THEMES, [])
+    const options = useMemo(() => THEMES, []);
 
     return (
         <div className={wrapperStyles}>
 
-            <label htmlFor="theme">Select <Light>Theme:</Light></label>
+            <label htmlFor="themeSwitch">Select <Light>Theme:</Light></label>
 
-            <select value={theme} name="theme" id="theme" onChange={(event) => update(event.target.value)}>
+            <select value={theme} name="theme" id="themeSwitch" onChange={(event) => update(event.target.value)}>
                 {Object.keys(options).map(key => {
                     const option = options[key];
                     return (

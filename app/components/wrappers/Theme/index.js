@@ -1,7 +1,6 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 
 const ThemeContext = createContext({});
-
 const BODY_TAG = "body";
 
 

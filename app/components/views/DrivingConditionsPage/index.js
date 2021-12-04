@@ -3,15 +3,14 @@ import styles from './DrivingConditionsPage.module.scss';
 import {useMemo} from "react";
 import {nanoid} from "nanoid";
 import {CONDITIONS} from "@constants";
+import {motion} from "framer-motion";
 import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";
-import { motion } from "framer-motion"
 
 
 export default function HomePageContent({theme, methods: {update, implode}}) {
 
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
-
     const options = useMemo(() => CONDITIONS, []);
 
     return (
