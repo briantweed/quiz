@@ -119,11 +119,13 @@ const add_theme = () => {
     ${themeBoundaryMarker}`
 
     const newStyleClass =
-    `body.${theme} {  
+`body.${theme} {  
+    color: #FFFFFF;
+    background: #000000;
+    transition: all 0.5s ease;
+}
 
-    }
-    
-    ${styleMarker}`
+${styleMarker}`
 
     gulp.src("./global-styles.css")
         .pipe(replace(styleMarker, newStyleClass))
