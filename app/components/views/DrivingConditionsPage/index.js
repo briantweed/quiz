@@ -2,20 +2,17 @@ import styles from './DrivingConditionsPage.module.scss';
 
 import {useMemo} from "react";
 import {nanoid} from "nanoid";
-import {useThemeWrapper} from "@wrappers/ThemeWrapper";
 import {CONDITIONS} from "@constants";
 import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";
 import { motion } from "framer-motion"
 
 
-export default function HomePageContent() {
+export default function HomePageContent({theme, methods: {update, implode}}) {
 
-    const {theme, methods: {update, implode}} = useThemeWrapper();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     const options = useMemo(() => CONDITIONS, []);
-
 
     return (
         <main role="main" className={wrapperStyles}>
@@ -26,11 +23,9 @@ export default function HomePageContent() {
                     <form>
 
                         <fieldset>
-
                             <legend id="legend-1">
                                 <h1 className="text-2xl"><Light>Choose your favorite</Light> driving condition:</h1>
                             </legend>
-
                             <motion.ul
                                 aria-labelledby="legend-1"
                                 role="radiogroup"
@@ -47,7 +42,7 @@ export default function HomePageContent() {
                                             key={nanoid()}
                                             role="radio"
                                             aria-checked={option.value === theme}
-                                            tabindex="0"
+                                            tabIndex="0"
                                             aria-labelledby={"label_" + option.value}
                                             data-value={option.label}
                                             variants={item}

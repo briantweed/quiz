@@ -1,12 +1,11 @@
 import styles from './Github.module.scss';
-import {useThemeWrapper} from "@wrappers/ThemeWrapper";
-import { BsGithub } from "react-icons/bs";
+
 import Light from "@components/shared/Light";
+import { BsGithub } from "react-icons/bs";
 
 
-export default function Github() {
+export default function Github({theme, methods: {implode}}) {
 
-    const {theme, methods: {implode}} = useThemeWrapper();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (
@@ -14,7 +13,7 @@ export default function Github() {
             <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/briantweed/quiz/tree/main/app/components/libraries/ThemeWrapper"
+                href="https://github.com/briantweed/quiz"
             ><BsGithub/>Visit <Light>GitHub</Light></a>
         </footer>
     )

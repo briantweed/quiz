@@ -5,7 +5,7 @@ import Header from "@layouts/Header";
 import Navigation from "@layouts/Navigation";
 import Motion from "@wrappers/Motion";
 import MetaTags from "@layouts/MetaTags";
-import withTheme from "@components/wrappers/withTheme";
+import withTheme from "@wrappers/Theme";
 
 
 class PageTemplate extends React.Component {

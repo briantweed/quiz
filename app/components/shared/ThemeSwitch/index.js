@@ -1,15 +1,13 @@
+import styles from './ThemeSwitch.module.scss';
+
 import {useMemo} from "react";
 import {nanoid} from 'nanoid';
-import {useThemeWrapper} from "@wrappers/ThemeWrapper";
-
 import {THEMES} from "@constants";
-import styles from './ThemeSwitch.module.scss';
 import Light from "@components/shared/Light";
 
 
-export default function ThemeSwitch() {
+export default function ThemeSwitch({theme, methods:{update, implode}}) {
 
-    const {theme, methods:{update, implode}} = useThemeWrapper();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     const options = useMemo(() => THEMES, [])

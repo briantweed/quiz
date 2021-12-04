@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import {Provider} from "react-redux";
 import store from "@store";
-import {ThemeWrapper} from "@wrappers/ThemeWrapper";
+import {Theme} from "@wrappers/Theme";
 import {AnimatePresence} from "framer-motion";
 import {THEMES, COOKIE_THEME} from "@constants";
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,11 +16,11 @@ function MyApp({Component, pageProps, router}) {
 
     return (
         <Provider store={store}>
-            <ThemeWrapper themes={THEMES} storageKey={COOKIE_THEME}>
+            <Theme themes={THEMES} storageKey={COOKIE_THEME}>
                 <AnimatePresence exitBeforeEnter>
                     <Component key={router.route} {...pageProps}/>
                 </AnimatePresence>
-            </ThemeWrapper>
+            </Theme>
             <Toast/>
         </Provider>
     )

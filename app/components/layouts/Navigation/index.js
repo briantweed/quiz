@@ -1,7 +1,8 @@
+import styles from './Navigation.module.scss';
+
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Light from "@components/shared/Light";
-import styles from './Navigation.module.scss';
 
 
 export default function Navigation({theme, methods:{implode}}) {

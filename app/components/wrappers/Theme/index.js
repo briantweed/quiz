@@ -5,7 +5,7 @@ const ThemeContext = createContext({});
 const BODY_TAG = "body";
 
 
-export function ThemeWrapper({ children, themes, storageKey }) {
+export function Theme({ children, themes, storageKey }) {
 
     useEffect(() => {
         const storedTheme = localStorage.getItem(storageKey);
@@ -63,6 +63,19 @@ export function ThemeWrapper({ children, themes, storageKey }) {
 }
 
 
-export function useThemeWrapper() {
+export function useTheme() {
     return useContext(ThemeContext);
+}
+
+export default function withTheme(Component) {
+
+    return function WithThemeValues({ isLoading, ...props }) {
+        const themeItems = useTheme();
+
+        return (
+            <Component {...props} {...themeItems}/>
+        )
+
+    };
+
 }
