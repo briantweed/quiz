@@ -8,7 +8,6 @@
             @apply transition-all duration-500;
 
             &.active {
-                box-shadow: 0 -3px 14px rgba(0,0,0,0.4);
                 @apply transition-all duration-500;
             }
 
@@ -30,10 +29,10 @@
 
             &.active {
                 @apply bg-white;
+                box-shadow: 0 -3px 14px rgba(0,0,0,0.4);
             }
 
         }
-
 
     }
 
@@ -48,11 +47,11 @@
             @apply text-lg;
 
             &:hover {
-                box-shadow: 0 -1px 5px rgba(140,140,190,0.3);
+                box-shadow: 0 0 2px rgba(190,190,250,0.7);
             }
 
             &.active {
-                box-shadow: 0 -1px 10px rgba(140,140,190,0.5);
+                box-shadow: 0 0 7px rgba(190,190,250,0.7);
             }
 
         }
