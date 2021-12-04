@@ -3,6 +3,7 @@ import {variants} from "@variants/page";
 
 
 export default function Motion({ children }) {
+
     return (
         <motion.div
             layout
@@ -15,4 +16,5 @@ export default function Motion({ children }) {
             onAnimationComplete={() => document.body.classList.remove("overflow-hidden")}
         >{ children }</motion.div>
     )
+
 }

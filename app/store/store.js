@@ -1,7 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit';
 
-const store = configureStore({
-    reducer: {}
-})
+import loadingReducer from "./loadingSlice";
 
-export default store
+
+export default configureStore({
+    reducer: {
+        loading: loadingReducer
+    },
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        })
+});

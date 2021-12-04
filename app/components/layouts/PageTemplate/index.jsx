@@ -5,6 +5,8 @@ import Navigation from "@layouts/Navigation";
 import Motion from "@wrappers/Motion";
 import MetaTags from "@layouts/MetaTags";
 import withTheme from "@wrappers/Theme";
+import Konami from "@components/shared/Konami/kode";
+import ErrorBoundary from "@layouts/ErrorBoundary";
 
 
 class PageTemplate extends React.Component {
@@ -27,12 +29,13 @@ class PageTemplate extends React.Component {
         const ThemedNavigation = withTheme(Navigation);
 
         return (
-            <>
+            <ErrorBoundary>
+                <Konami/>
                 <MetaTags/>
                 <ThemedHeader/>
                 <ThemedNavigation/>
                 <Motion>{ this.props.children }</Motion>
-            </>
+            </ErrorBoundary>
         );
     }
 

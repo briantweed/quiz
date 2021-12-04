@@ -7,7 +7,7 @@
             "@content/*": ["app/components/views/*"],
             "@wrappers/*": ["app/components/wrappers/*"],
             "@variants/*": ["app/variants/*"],
-            "@store": ["app/store/store"],
+            "@store/*": ["app/store/*"],
             "@constants": ["app/constants/"],
             "@api/*": ["app/hooks/api/*"]
         }

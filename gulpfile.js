@@ -126,7 +126,7 @@ const add_theme = () => {
 
 ${styleMarker}`
 
-    gulp.src("./global-styles.css")
+    gulp.src("./themes.css")
         .pipe(contains({
             search: "." + theme,
             onFound: () => {
@@ -151,7 +151,7 @@ ${styleMarker}`
                 }))
                 .pipe(contains({
                     search: themeBoundaryMarker,
-                    onFound: function (string, file, cb) {
+                    onFound: function (string, file) {
                         console.log("- " + file.path.split(/[\\]+/).pop())
                         return false;
                     }

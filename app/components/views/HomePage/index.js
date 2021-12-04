@@ -4,11 +4,11 @@ import ThemeSwitch from "@components/shared/ThemeSwitch";
 import withTheme from "@wrappers/Theme";
 
 
-
 export default function HomePageContent({theme, methods: {implode}}) {
 
     const ThemedSwitch = withTheme(ThemeSwitch);
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
+
 
     return (
         <main role="main" className={wrapperStyles}>

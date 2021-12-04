@@ -1,0 +1,27 @@
+.wrapper {
+
+    @apply flex justify-center items-center h-20 my-20;
+
+    $size: 3.5rem;
+
+    .loader {
+        border: 0.2rem solid #ccc;
+        border-radius: 100%;
+        border-top-color: #333;
+        border-bottom-color: #333;
+        width: $size;
+        height: $size;
+        animation: spin 1s linear infinite;
+    }
+
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -13,6 +13,7 @@ export default function HomePageContent({theme, methods: {update, implode}}) {
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
     const options = useMemo(() => CONDITIONS, []);
 
+
     return (
         <main role="main" className={wrapperStyles}>
 
