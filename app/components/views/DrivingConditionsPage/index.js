@@ -8,7 +8,7 @@ import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";
 
 
-export default function HomePageContent({theme, methods: {update, implode}}) {
+export default function DrivingConditionsPage({theme, methods: {update, implode}}) {
 
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
     const options = useMemo(() => CONDITIONS, []);
