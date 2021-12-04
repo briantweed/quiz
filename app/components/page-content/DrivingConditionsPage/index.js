@@ -21,31 +21,43 @@ export default function HomePageContent() {
         <main role="main" className={wrapperStyles}>
 
             <div className="container flex justify-center mt-16">
-                <div className="w-3/4">
+                <div className="w-5/6 lg:w-3/4 mb-20">
 
                     <form>
-                        <h1 className="text-2xl"><Light>Choose your favorite</Light> driving condition:</h1>
 
-                        <motion.ul
-                            variants={container}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            className={styles.fieldGroup}
-                        >
-                            {Object.keys(options).map(key => {
-                                const option = options[key];
-                                return (
-                                    <motion.li
-                                        key={nanoid()}
-                                        variants={item}
-                                        transition={{ type: 'spring' }}
-                                        onClick={() => update(option.value)}
-                                        className={styles.tile + " " + (option.value === theme ? styles.active : '') }
-                                    >{ option.label }</motion.li>
-                                )
-                            })}
-                        </motion.ul>
+                        <fieldset>
+
+                            <legend id="legend-1">
+                                <h1 className="text-2xl"><Light>Choose your favorite</Light> driving condition:</h1>
+                            </legend>
+
+                            <motion.ul
+                                aria-labelledby="legend-1"
+                                role="radiogroup"
+                                variants={container}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                className={styles.fieldGroup}
+                            >
+                                {Object.keys(options).map(key => {
+                                    const option = options[key];
+                                    return (
+                                        <motion.li
+                                            key={nanoid()}
+                                            role="radio"
+                                            aria-checked={option.value === theme}
+                                            tabindex="0"
+                                            aria-labelledby={"label_" + option.value}
+                                            data-value={option.label}
+                                            variants={item}
+                                            className={styles.tile + " " + (option.value === theme ? styles.active : '') }
+                                            onClick={() => update(option.value)}
+                                        ><label id={"label_" + option.value}>{ option.label }</label></motion.li>
+                                    )
+                                })}
+                            </motion.ul>
+                        </fieldset>
 
                     </form>
 

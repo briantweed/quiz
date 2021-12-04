@@ -1,5 +1,5 @@
 .wrapper {
-    @apply sticky top-0;
+    @apply sticky top-0 z-10;
     @apply w-full;
     @apply font-semibold;
     @apply transition-all duration-500;
