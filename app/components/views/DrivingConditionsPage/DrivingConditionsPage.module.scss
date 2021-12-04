@@ -76,11 +76,10 @@
     &.dracula {
 
         .tile {
-            @apply border-2 hover:bg-gray-despair;
+            @apply border-2 hover:bg-gray-despair hover:text-gray-light;
 
             &.active:before {
                 @apply bg-red-light border-red-light;
-                @apply hover:bg-red-light;
             }
 
         }
