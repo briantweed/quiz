@@ -27,14 +27,17 @@
             content: "";
             position: absolute;
             left: -1rem;
-            top: calc(50% - 2px);
-            @apply border-2 rounded-full;
+            top: calc(50% - 0.75rem);
+            width: 1px;
+            height: 1.5rem;
             @apply transition-all duration-500;
 
             @screen sm {
                 top: unset;
                 bottom: -1rem;
-                left: calc(50% - 2px);
+                left: calc(50% - 1rem);
+                width: 2rem;
+                height: 1px;
             }
 
         }
