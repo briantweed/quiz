@@ -1,5 +1,5 @@
 import styles from './Github.module.scss';
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
+import {useThemeWrapper} from "@wrappers/ThemeWrapper";
 import { BsGithub } from "react-icons/bs";
 import Light from "@components/shared/Light";
 

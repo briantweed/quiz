@@ -1,11 +1,11 @@
 import React from 'react';
 import LogRocket from 'logrocket';
 
-import Head from "next/head";
 import Header from "@layouts/Header";
 import Navigation from "@layouts/Navigation";
-import Motion from "@libraries/Motion";
+import Motion from "@wrappers/Motion";
 import MetaTags from "@layouts/MetaTags";
+import withTheme from "@components/wrappers/withTheme";
 
 
 class PageTemplate extends React.Component {
@@ -25,18 +25,19 @@ class PageTemplate extends React.Component {
 
     render() {
 
+        const ThemedHeader = withTheme(Header);
+        const ThemedNavigation = withTheme(Navigation);
+
         return (
             <>
 
                 <MetaTags/>
 
-                <Header/>
+                <ThemedHeader/>
 
-                <Navigation/>
+                <ThemedNavigation/>
 
-                <Motion>
-                    { this.props.children }
-                </Motion>
+                <Motion>{ this.props.children }</Motion>
 
             </>
         );

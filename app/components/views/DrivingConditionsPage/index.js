@@ -2,7 +2,7 @@ import styles from './DrivingConditionsPage.module.scss';
 
 import {useMemo} from "react";
 import {nanoid} from "nanoid";
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
+import {useThemeWrapper} from "@wrappers/ThemeWrapper";
 import {CONDITIONS} from "@constants";
 import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";

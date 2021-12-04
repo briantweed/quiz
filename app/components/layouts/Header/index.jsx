@@ -1,12 +1,9 @@
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
-
 import styles from './Header.module.scss';
 import Light from "@components/shared/Light";
 
 
-export default function Header() {
+export default function Header({theme, label, methods: {implode}}) {
 
-    const {theme, label, methods: {implode}} = useThemeWrapper();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (

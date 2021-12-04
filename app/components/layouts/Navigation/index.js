@@ -1,17 +1,13 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Light from "@components/shared/Light";
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
 import styles from './Navigation.module.scss';
 
 
-export default function Navigation() {
+export default function Navigation({theme, methods:{implode}}) {
 
-    const {theme, methods:{implode}} = useThemeWrapper();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
-
     const router = useRouter();
-
 
     return (
         <nav role="navigation" className={wrapperStyles}>

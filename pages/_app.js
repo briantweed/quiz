@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import {Provider} from "react-redux";
 import store from "@store";
-import {ThemeWrapper} from "@libraries/ThemeWrapper";
+import {ThemeWrapper} from "@wrappers/ThemeWrapper";
 import {AnimatePresence} from "framer-motion";
 import {THEMES, COOKIE_THEME} from "@constants";
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,7 +9,7 @@ import 'tailwindcss/tailwind.css';
 import '../global-styles.css';
 
 
-const Toast = dynamic(() => import("@libraries/Toast").then());
+const Toast = dynamic(() => import("@wrappers/Toast").then());
 
 
 function MyApp({Component, pageProps, router}) {

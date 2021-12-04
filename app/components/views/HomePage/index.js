@@ -1,7 +1,7 @@
 import styles from './HomePage.module.scss';
 
 import ThemeSwitch from "@components/shared/ThemeSwitch";
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
+import {useThemeWrapper} from "@wrappers/ThemeWrapper";
 
 
 export default function HomePageContent() {

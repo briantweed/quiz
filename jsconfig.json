@@ -4,8 +4,8 @@
         "paths": {
             "@components/*": ["app/components/*"],
             "@layouts/*": ["app/components/layouts/*"],
-            "@content/*": ["app/components/page-content/*"],
-            "@libraries/*": ["app/components/libraries/*"],
+            "@content/*": ["app/components/views/*"],
+            "@wrappers/*": ["app/components/wrappers/*"],
             "@variants/*": ["app/variants/*"],
             "@store": ["app/store/store"],
             "@constants": ["app/constants/"],

@@ -1,6 +1,6 @@
 import {useMemo} from "react";
 import {nanoid} from 'nanoid';
-import {useThemeWrapper} from "@libraries/ThemeWrapper";
+import {useThemeWrapper} from "@wrappers/ThemeWrapper";
 
 import {THEMES} from "@constants";
 import styles from './ThemeSwitch.module.scss';
