@@ -118,8 +118,7 @@ const add_theme = () => {
     
     ${themeBoundaryMarker}`
 
-    const newStyleClass =
-`body.${theme} {  
+    const newStyleClass = `body.${theme} {  
     color: #FFFFFF;
     background: #000000;
     transition: all 0.5s ease;
@@ -128,6 +127,12 @@ const add_theme = () => {
 ${styleMarker}`
 
     gulp.src("./global-styles.css")
+        .pipe(contains({
+            search: "." + theme,
+            onFound: () => {
+                throw("\n\n\n\n\n!!! :: " + theme + " theme already exists :: !!!\n");
+            }
+        }))
         .pipe(replace(styleMarker, newStyleClass))
         .pipe(gulp.dest("./"))
 
