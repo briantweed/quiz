@@ -1,25 +1,42 @@
 .wrapper {
 
+    .fieldGroup {
+        @apply flex flex-wrap justify-evenly items-center mt-8;
+        gap: 2rem 1rem;
+    }
+
     .tile {
         @apply relative;
-        @apply flex-grow;
-        @apply p-8 m-4 ml-0;
+        flex: 1 0 100%;
+        @apply p-8;
         @apply border rounded;
         @apply text-center;
         @apply cursor-pointer;
         @apply transition-all duration-500;
         @apply hover:duration-500;
 
-        &:before {
+        @screen sm {
+            flex: 1 0 calc(50% - 1rem);
+        }
 
+        @screen lg {
+            flex: 1 0 calc(25% - 1rem);
         }
 
         &.active:before {
             content: "";
-            @apply absolute -bottom-4;
-            left: calc(50% - 2px);
-            @apply  border-2 rounded-full;
+            position: absolute;
+            left: -1rem;
+            top: calc(50% - 2px);
+            @apply border-2 rounded-full;
             @apply transition-all duration-500;
+
+            @screen sm {
+                top: unset;
+                bottom: -1rem;
+                left: calc(50% - 2px);
+            }
+
         }
 
     }

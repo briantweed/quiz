@@ -31,7 +31,7 @@ export default function HomePageContent() {
                             initial="initial"
                             animate="animate"
                             exit="exit"
-                            className="flex justify-evenly items-center mt-8"
+                            className={styles.fieldGroup}
                         >
                             {Object.keys(options).map(key => {
                                 const option = options[key];
