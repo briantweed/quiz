@@ -1,9 +1,10 @@
 'use strict';
 
+const contains = require('gulp-contains');
 const fs = require('fs');
 const favicon = require('gulp-real-favicon');
-const gulp = require('gulp');
 const glob = require('glob');
+const gulp = require('gulp');
 const minimist = require('minimist');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
@@ -106,23 +107,50 @@ const create_component = () => {
 const add_theme = () => {
     const dir = './app/components/**/*.scss';
 
+    let {theme} = minimist(process.argv.slice(3));
+
+    const themeBoundaryMarker = "// ----------------------------------------*-";
+    const styleMarker = "/* ----------------------------------------*- */";
+
+    const newThemeTemplate = `.${theme} {
+    
+    }
+    
+    ${themeBoundaryMarker}`
+
+    const newStyleClass =
+    `body.${theme} {  
+
+    }
+    
+    ${styleMarker}`
+
     return glob(dir, {}, function (er, files) {
 
-        files.map(file => {
-
-            return gulp.src(file)
-                .pipe(replace('// ----------------------------------------*-',
-                    `.test {
-
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const split = file.split("/");
+            const path = split.slice(0, split.length - 1).join("/") + "/";
+            gulp.src(file)
+                .pipe(contains({
+                    search: "." + theme,
+                    onFound: () => {
+                        throw("\n\n\n\n\n!!! :: " + theme + " theme already exists :: !!!\n");
                     }
-
-                    ----------------------------------------*-`
-                ))
-                .pipe(gulp.dest(file))
-                .pipe(notify({message: 'theme added', onLast: true}));
-
-
-        })
+                }))
+                .pipe(contains({
+                    search: themeBoundaryMarker,
+                    onFound: function (string, file, cb) {
+                        console.log("- " + file.path.split(/[\\]+/).pop())
+                        return false;
+                    }
+                }))
+                .pipe(replace(themeBoundaryMarker, newThemeTemplate))
+                .pipe(gulp.dest(path))
+                .pipe(gulp.src("./global-styles.css"))
+                .pipe(replace(styleMarker, newStyleClass))
+                .pipe(gulp.dest("./"))
+        }
 
     })
 
@@ -131,8 +159,9 @@ const add_theme = () => {
 
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
-    console.log(" make -  gulp make --component=Name");
-    console.log(" favicon   -  generate favicon\n\n");
+    console.log(" make    -  gulp make --component=Name");
+    console.log(" theme   -  gulp add --theme=Name");
+    console.log(" favicon -  generate favicon\n\n");
     done();
 };
 
