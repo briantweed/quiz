@@ -125,6 +125,10 @@ const add_theme = () => {
     
     ${styleMarker}`
 
+    gulp.src("./global-styles.css")
+        .pipe(replace(styleMarker, newStyleClass))
+        .pipe(gulp.dest("./"))
+
     return glob(dir, {}, function (er, files) {
 
         for (let i = 0; i < files.length; i++) {
@@ -146,10 +150,7 @@ const add_theme = () => {
                     }
                 }))
                 .pipe(replace(themeBoundaryMarker, newThemeTemplate))
-                .pipe(gulp.dest(path))
-                .pipe(gulp.src("./global-styles.css"))
-                .pipe(replace(styleMarker, newStyleClass))
-                .pipe(gulp.dest("./"))
+                .pipe(gulp.dest(path));
         }
 
     })
