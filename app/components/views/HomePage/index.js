@@ -1,12 +1,12 @@
 import styles from './HomePage.module.scss';
 
 import ThemeSwitch from "@components/shared/ThemeSwitch";
-import {useTheme} from "@wrappers/Theme";
+import withTheme from "@wrappers/Theme";
 
+const ThemedSwitch = withTheme(ThemeSwitch);
 
-export default function HomePageContent() {
+export default function HomePageContent({theme, methods: {implode}}) {
 
-    const {theme, methods: {implode}} = useTheme();
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
 
     return (
@@ -15,7 +15,7 @@ export default function HomePageContent() {
             <div className={styles.content}>
 
                 <div className="flex justify-center items-center h-half flex-col">
-                    <ThemeSwitch/>
+                    <ThemedSwitch/>
                 </div>
             </div>
 

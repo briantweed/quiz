@@ -67,6 +67,7 @@ export function useTheme() {
     return useContext(ThemeContext);
 }
 
+
 export default function withTheme(Component) {
 
     return function WithThemeValues({ isLoading, ...props }) {

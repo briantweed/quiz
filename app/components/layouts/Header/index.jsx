@@ -19,4 +19,5 @@ export default function Header({theme, label, methods: {implode}}) {
 
         </div>
     )
+
 }
