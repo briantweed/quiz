@@ -16,7 +16,7 @@ export default function ThemeSwitch({theme, methods:{update, implode}}) {
 
             <label htmlFor="themeSwitch">Select <Light>Theme:</Light></label>
 
-            <select value={theme} name="theme" id="themeSwitch" onChange={(event) => update(event.target.value)}>
+            <select autoFocus value={theme} name="theme" id="themeSwitch" onChange={(event) => update(event.target.value)}>
                 {options.map(option => {
                     return (
                         <option key={nanoid()} value={option.value}>{ option.label }</option>
