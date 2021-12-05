@@ -124,5 +124,3 @@ To add a component to a subfolder, add the folder structure before the Component
 Gulp can also add a new style class to each `.scss` that contains the comment tags.
 
 `gulp add --theme=theme-name` - will add `.theme-name` to each file found and to `themes.css`
-
-
