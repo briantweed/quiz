@@ -32,7 +32,7 @@ module.exports = {
       },
       red: {
         lightest: "#f6828f",
-        lighter: "#ff4056",
+        lighter: "#ff3a51",
         light: "#f54b5f",
         hover: "#dc2553",
         DEFAULT: "#d11242",
