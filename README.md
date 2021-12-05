@@ -40,10 +40,22 @@ Configure `tailwind.config.js`
 - Add a class for each theme you want to create.
 - Should include all base colour styles
 
-```css
+```
 body.default {
     color: #333333;
     background: #FFFFFF;
+    transition: all 0.5s ease;
+}
+
+body.dark {
+    color: #96CEEE;
+    background: #333333;
+    transition: all 0.5s ease;
+}
+
+body.contrast {
+    color: #FFFF00;
+    background: #000000;
     transition: all 0.5s ease;
 }
 ```
@@ -74,14 +86,26 @@ Within the scoped `.scss` file for each component is a section for themes marked
 
 ** !! Each component that needs theme info must contain these comment tags !! **
 
-```css
+```
 // ----- THEMES -----------------------------
 
     &.default {
         @apply bg-default;
         @apply text-default;
     }
-
+    
+    
+    &.dark {
+        @apply bg-gray-dark;
+        @apply text-white;
+    }
+    
+    
+    &.constrast {
+        @apply bg-black;
+        @apply text-white;
+    }
+    
 // ----------------------------------------*-
 ```
 
