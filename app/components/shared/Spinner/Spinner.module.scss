@@ -1,6 +1,6 @@
 $size: 3.5rem;
 $animation: 40;
-
+$scale: 2.5;
 
 .wrapper {
 
@@ -45,7 +45,7 @@ $animation: 40;
         transform: rotate(#{$animation * 27 + "deg"}) scale(1);
     }
     60% {
-        transform: rotate(#{$animation * 108 + "deg"}) scale(2.5);
+        transform: rotate(#{$animation * 108 + "deg"}) scale($scale);
     }
     85% {
         transform: rotate(#{$animation * 153 + "deg"}) scale(1);
