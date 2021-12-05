@@ -82,6 +82,11 @@ ThemeWrapper also contains an HOC which adds the necessary props to any componen
    - `update` (function) store selected theme
    - `implode` (function) combine the selected theme class with any default component classes into a single string
 
+<br/>
+
+#### There's also a hook if you don't need the HOC: `const themeItems = useTheme();`
+<br/>
+
 Within the scoped `.scss` file for each component is a section for themes marked with a start and end comment tag.
 
 ** !! Each component that needs theme info must contain these comment tags !! **
@@ -108,6 +113,9 @@ Within the scoped `.scss` file for each component is a section for themes marked
     
 // ----------------------------------------*-
 ```
+
+
+
 
 ### 5. Gulp
 

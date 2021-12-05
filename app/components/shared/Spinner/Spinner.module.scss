@@ -1,10 +1,10 @@
 $size: 3.5rem;
-$animation: 40;
-$scale: 2.5;
+$animation: 60;
+$scale: 3;
 
 .wrapper {
 
-    @apply flex justify-center items-center h-20 my-20;
+    @apply flex justify-center items-center h-20 my-28;
 
     .loader {
         width: $size;

@@ -53,7 +53,7 @@ export function Theme({ children, themes, storageKey }) {
 
 
     return (
-        <ThemeContext.Provider value={{theme, label, methods: {update, implode}}}>
+        <ThemeContext.Provider value={{theme, label, defaultTheme: DEFAULT_THEME, methods: {update, implode}}}>
             { children }
         </ThemeContext.Provider>
     );
