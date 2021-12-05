@@ -16,7 +16,7 @@ body.dark {
 }
 
 body.dracula {
-    color: #f66374; /* red-lighter */
+    color: #ff4056; /* red-lighter */
     background: #000000; /* `Black is the color of my true love"s hair. His face so soft and wondrous fair...` */
     transition: all 0.5s ease; /* Shout-out to the "High Priestess of Soul". */
 }
