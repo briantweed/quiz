@@ -15,7 +15,7 @@
     }
 
     .tile {
-        @apply relative;
+        position: relative;
         flex: 1 0 100%;
         @apply p-8;
         @apply border rounded;
@@ -33,14 +33,14 @@
         }
 
         svg {
-            @apply absolute;
+            position: absolute;
             top: calc(50% - 0.5rem);
-            left: -1.25rem;
+            left: -1.4rem;
 
-            @screen md {
+            @screen sm {
                 top: unset;
                 left: calc(50% - 0.5rem);
-                bottom: -1.5rem;
+                bottom: -1.75rem;
             }
 
         }
