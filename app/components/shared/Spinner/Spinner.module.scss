@@ -7,7 +7,7 @@
     .loader {
         width: $size;
         height: $size;
-        animation: spin 2s linear infinite;
+        animation: spin-scale 40s linear infinite;
 
         &.border {
             border: 0.2rem solid #ccc;
@@ -31,5 +31,24 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+@keyframes spin-scale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    10% {
+        transform: rotate(720deg) scale(1);
+    }
+    60% {
+        transform: rotate(4320deg) scale(2.5);
+    }
+    85% {
+        transform: rotate(6120deg) scale(1);
+    }
+    100% {
+        transform: rotate(7200deg) scale(1);
     }
 }
