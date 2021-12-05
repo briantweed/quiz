@@ -82,7 +82,7 @@ const generate_favicon = (done) => {
 const create_component = () => {
     let options = minimist(process.argv.slice(3));
     if (options.component !== undefined && options.component !== true) {
-        const componentPath = options.component.replace(".", "/");
+        const componentPath = options.component.replace(/\./g,'/')
         const componentName = options.component.split(/[\/.]+/).pop();
         if (!fs.existsSync('./app/Components/' + componentPath)) {
             return gulp.src('./gulp/component.template')
