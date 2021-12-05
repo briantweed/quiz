@@ -168,7 +168,7 @@ ${styleMarker}`
 const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
     console.log(" make    -  gulp make --component=Name");
-    console.log(" theme   -  gulp add --theme=Name");
+    console.log(" add   -  gulp add --theme=Name");
     console.log(" favicon -  generate favicon\n\n");
     done();
 };
@@ -178,5 +178,5 @@ exports.default = help;
 exports.help = help;
 exports.make = create_component;
 exports.favicon = generate_favicon;
-exports.theme = add_theme;
+exports.add = add_theme;
 
