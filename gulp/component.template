@@ -1,4 +1,4 @@
-import styles from './{{ page_name }}.module.scss';
+import styles from "./{{ page_name }}.module.scss";
 
 
 export default function {{ page_name }}(props) {

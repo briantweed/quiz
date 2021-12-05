@@ -1,7 +1,7 @@
-import styles from './ThemeSwitch.module.scss';
+import styles from "./ThemeSwitch.module.scss";
 
 import {useMemo} from "react";
-import {nanoid} from 'nanoid';
+import {nanoid} from "nanoid";
 import {THEMES} from "@constants";
 import Light from "@components/shared/Light";
 

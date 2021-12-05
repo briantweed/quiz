@@ -1,4 +1,4 @@
-import styles from './HomePage.module.scss';
+import styles from "./HomePage.module.scss";
 
 import ThemeSwitch from "@components/shared/ThemeSwitch";
 import withTheme from "@wrappers/Theme";

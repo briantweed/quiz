@@ -7,7 +7,7 @@ export default function Motion({ children }) {
     return (
         <motion.div
             layout
-            key={'pageContent'}
+            key={"pageContent"}
             initial="initial"
             animate="animate"
             exit="exit"

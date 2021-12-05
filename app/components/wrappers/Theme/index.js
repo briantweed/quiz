@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState} from 'react';
+import {createContext, useContext, useEffect, useState} from "react";
 
 const ThemeContext = createContext({});
 const BODY_TAG = "body";
@@ -27,6 +27,7 @@ export function Theme({ children, themes, storageKey }) {
 
 
     const update = (theme) => {
+
         const checkTheme = (theme) => {
             return !!(themes.find(option => {
                 return option.value === theme;
@@ -39,14 +40,15 @@ export function Theme({ children, themes, storageKey }) {
             const element = document.querySelector(BODY_TAG);
             if (element) {
                 element.classList.remove(...document.querySelector(BODY_TAG).classList);
-                document.querySelector("body").classList.add(theme);
+                document.querySelector(BODY_TAG).classList.add(theme);
             }
         }
+
     }
 
 
     const implode = (array, delimiter = " ") => {
-        return array.join(delimiter).trim().replace(/\s\s+/g, ' ');
+        return array.join(delimiter).trim().replace(/\s\s+/g, " ");
     }
 
 

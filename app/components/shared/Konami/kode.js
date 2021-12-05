@@ -21,7 +21,7 @@
 
 
 import React from "react";
-import kustom from './Konami.module.scss';
+import kustom from "./Konami.module.scss";
 import {KODE, KORRECT, KRUMMY, KONSOLE_KAPTION} from "./konstants";
 
 
@@ -32,7 +32,7 @@ class Konami extends React.Component {
 
         const kode = KODE;
         const kontents = kode.length;
-        this.kountdown = '';
+        this.kountdown = "";
         this.state = {
             kode: kode,
             kontents: kontents,
@@ -45,12 +45,12 @@ class Konami extends React.Component {
 
 
     componentDidMount() {
-        window.addEventListener('keyup', this.konfirm_kode_kompliance);
+        window.addEventListener("keyup", this.konfirm_kode_kompliance);
     }
 
 
     componentWillUnmount() {
-        window.removeEventListener('keyup', this.konfirm_kode_kompliance);
+        window.removeEventListener("keyup", this.konfirm_kode_kompliance);
         this.klear_kountdown();
     }
 
@@ -91,13 +91,13 @@ class Konami extends React.Component {
 
     klass_konnection() {
         this.klear_kountdown();
-        document.body.classList.add('fixed', 'w-full');
+        document.body.classList.add("fixed", "w-full");
     }
 
 
     klass_kancelled() {
         this.konsole_kallout();
-        this.kountdown = setTimeout(() => document.body.classList.remove('fixed', 'w-full'), 1000);
+        this.kountdown = setTimeout(() => document.body.classList.remove("fixed", "w-full"), 1000);
     }
 
 
@@ -112,7 +112,7 @@ class Konami extends React.Component {
 
 
     kaboom(kollection, kombine = " ") {
-        return kollection.join(kombine).trim().replace(/\s\s+/g, ' ');
+        return kollection.join(kombine).trim().replace(/\s\s+/g, " ");
     }
 
 

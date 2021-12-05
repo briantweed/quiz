@@ -4,9 +4,9 @@ import store from "@store/store";
 import {Theme} from "@wrappers/Theme";
 import {AnimatePresence} from "framer-motion";
 import {THEMES, COOKIE_THEME} from "@constants";
-import 'react-toastify/dist/ReactToastify.css';
-import 'tailwindcss/tailwind.css';
-import '../themes.css';
+import "react-toastify/dist/ReactToastify.css";
+import "tailwindcss/tailwind.css";
+import "../themes.css";
 
 
 const Toast = dynamic(() => import("@wrappers/Toast").then());

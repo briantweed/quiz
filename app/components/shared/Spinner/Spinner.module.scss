@@ -9,7 +9,7 @@ $scale: 2.5;
     .loader {
         width: $size;
         height: $size;
-        animation: spin-scale #{$animation + 's'} linear infinite;
+        animation: spin-scale #{$animation + "s"} linear infinite;
 
         &.border {
             border: 0.2rem solid #ccc;
@@ -19,7 +19,7 @@ $scale: 2.5;
         }
 
         &.img {
-            background: url('/loading.png') no-repeat center / cover;
+            background: url("/loading.png") no-repeat center / cover;
         }
 
     }

@@ -1,4 +1,4 @@
-import styles from './DrivingConditionsPage.module.scss';
+import styles from "./DrivingConditionsPage.module.scss";
 
 import {useMemo} from "react";
 import {nanoid} from "nanoid";
@@ -56,7 +56,7 @@ export default function DrivingConditionsPage({theme, methods: {update, implode}
                                             aria-labelledby={"label_" + option.value}
                                             data-value={option.label}
                                             variants={item}
-                                            className={styles.tile + " " + (option.value === theme ? styles.active : '') }
+                                            className={styles.tile + " " + (option.value === theme ? styles.active : "") }
                                             onClick={() => update(option.value)}
                                         ><label id={"label_" + option.value}>{ option.label }</label><Icon/></motion.li>
                                     )

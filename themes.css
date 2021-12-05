@@ -17,15 +17,15 @@ body.dark {
 
 body.dracula {
     color: #f54b5f; /* red-light */
-    background: #000000; /* `Black is the color of my true love's hair. His face so soft and wondrous fair...` */
-    transition: all 0.5s ease; /* Shout-out to the 'High Priestess of Soul'. */
+    background: #000000; /* `Black is the color of my true love"s hair. His face so soft and wondrous fair...` */
+    transition: all 0.5s ease; /* Shout-out to the "High Priestess of Soul". */
 }
 
 
 body.contrast {
     color: #FFFF00; /* my eyes! the goggles, they do nothing! */
     background: #000000; /* `I see a red door and I want it painted black. No colors anymore, I want them to turn black...` */
-    transition: all 0.5s ease; /* Shout-out to the 'High Priestess of Soul'. */
+    transition: all 0.5s ease; /* Shout-out to the "High Priestess of Soul". */
 }
 
 /* ----------------------------------------*- */

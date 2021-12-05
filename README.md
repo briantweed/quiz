@@ -57,7 +57,7 @@ The selection is stored to local storage and loaded on page load.
 
 - Wrap [./pages/_app.js](_app.js) with the component
 - ThemeWrapper required 2 prop:
-  - `themes` : array of theme objects `{value: 'theme', label: 'Theme}`
+  - `themes` : array of theme objects `{value: "theme", label: "Theme}`
   - `storageKey` : name of local storage key
 
 ### 4. Themed Components
