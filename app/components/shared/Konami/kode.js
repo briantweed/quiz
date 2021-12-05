@@ -125,7 +125,7 @@ class Konami extends React.Component {
                 <div className={klassNames}>
                     <div className={kustom.kontent}>
                         <p className={kustom.kaption}>THIS WEBSITE WAS DESIGNED AND CREATED BY</p>
-                        <a className={kustom.klick} href="https://github.com/briantweed/quiz" target="_blank" rel="noreferrer noopener">briantweed</a>
+                        <a className={kustom.klick} href="https://github.com/briantweed/tailwind-theme-test" target="_blank" rel="noreferrer noopener">briantweed</a>
                         <button onClick={this.kancel_kode_kompliance} className={kustom.kollapse}>click to close</button>
                     </div>
                 </div>
