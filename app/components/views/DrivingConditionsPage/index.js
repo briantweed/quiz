@@ -58,7 +58,10 @@ export default function DrivingConditionsPage({theme, methods: {update, implode}
                                             variants={item}
                                             className={styles.tile + " " + (option.value === theme ? styles.active : "") }
                                             onClick={() => update(option.value)}
-                                        ><label id={"label_" + option.value}>{ option.label }</label><Icon/></motion.li>
+                                        >
+                                            <label id={"label_" + option.value}>{ option.label }</label>
+                                            { option.value === theme && <Icon aria-hidden="true"/> }
+                                        </motion.li>
                                     )
                                 })}
                             </motion.ul>
