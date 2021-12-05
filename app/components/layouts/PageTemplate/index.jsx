@@ -1,45 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSelector} from "react-redux";
 import LogRocket from 'logrocket';
+import ErrorBoundary from "@layouts/ErrorBoundary";
+import MetaTags from "@layouts/MetaTags";
+import Konami from "@components/shared/Konami/kode";
 import Header from "@layouts/Header";
 import Navigation from "@layouts/Navigation";
 import Motion from "@wrappers/Motion";
-import MetaTags from "@layouts/MetaTags";
 import withTheme from "@wrappers/Theme";
-import Konami from "@components/shared/Konami/kode";
-import ErrorBoundary from "@layouts/ErrorBoundary";
+import Spinner from "@components/shared/Spinner";
 
 
-class PageTemplate extends React.Component {
+export default function PageTemplate({children}) {
 
-    constructor(props) {
-        super(props);
-    }
-
-
-    componentDidMount() {
+    useEffect(() => {
         if (typeof window !== 'undefined') {
             LogRocket.init(process.env.logRocketKey);
             LogRocket.log('YoOoOoO')
         }
-    }
+    });
 
+    const isLoading = useSelector((state) => state.loading.status);
 
-    render() {
-        const ThemedHeader = withTheme(Header);
-        const ThemedNavigation = withTheme(Navigation);
+    const ThemedHeader = withTheme(Header);
+    const ThemedNavigation = withTheme(Navigation);
 
-        return (
-            <ErrorBoundary>
-                <Konami/>
-                <MetaTags/>
-                <ThemedHeader/>
-                <ThemedNavigation/>
-                <Motion>{ this.props.children }</Motion>
-            </ErrorBoundary>
-        );
-    }
+    return (
+        <ErrorBoundary>
+            <Konami/>
+            <MetaTags/>
+            <ThemedHeader/>
+            <ThemedNavigation/>
+            { isLoading ? <Spinner/> : <Motion>{children}</Motion> }
+        </ErrorBoundary>
+    );
 
 }
-
-
-export default PageTemplate;
