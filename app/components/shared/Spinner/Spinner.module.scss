@@ -1,13 +1,15 @@
+$size: 3.5rem;
+$animation: 40;
+
+
 .wrapper {
 
     @apply flex justify-center items-center h-20 my-20;
 
-    $size: 3.5rem;
-
     .loader {
         width: $size;
         height: $size;
-        animation: spin-scale 40s linear infinite;
+        animation: spin-scale #{$animation + 's'} linear infinite;
 
         &.border {
             border: 0.2rem solid #ccc;
@@ -39,16 +41,16 @@
     0% {
         transform: rotate(0deg) scale(1);
     }
-    10% {
-        transform: rotate(720deg) scale(1);
+    15% {
+        transform: rotate(#{$animation * 27 + "deg"}) scale(1);
     }
     60% {
-        transform: rotate(4320deg) scale(2.5);
+        transform: rotate(#{$animation * 108 + "deg"}) scale(2.5);
     }
     85% {
-        transform: rotate(6120deg) scale(1);
+        transform: rotate(#{$animation * 153 + "deg"}) scale(1);
     }
     100% {
-        transform: rotate(7200deg) scale(1);
+        transform: rotate(#{$animation * 180 + "deg"}) scale(1);
     }
 }
