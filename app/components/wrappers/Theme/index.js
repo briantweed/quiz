@@ -66,7 +66,7 @@ export function useTheme() {
 
 export default function withTheme(Component) {
 
-    return function WithThemeValues({ isLoading, ...props }) {
+    return function WithThemeValues({ ...props }) {
         const themeItems = useTheme();
 
         return (
