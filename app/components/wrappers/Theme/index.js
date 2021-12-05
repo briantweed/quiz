@@ -19,7 +19,7 @@ export function Theme({ children, themes, storageKey }) {
 
 
     const label = (() => {
-        const selectedTheme = themes.filter(option => {
+        const selectedTheme = themes.find(option => {
             return option.value === theme;
         })
         return selectedTheme.label;
