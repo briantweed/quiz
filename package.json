@@ -37,6 +37,7 @@
     "tailwindcss-transitions": "^2.2.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^12.1.2",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4"
   }

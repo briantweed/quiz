@@ -5,13 +5,10 @@
     $size: 3.5rem;
 
     .loader {
-        border: 0.2rem solid #ccc;
-        border-radius: 100%;
-        border-top-color: #333;
-        border-bottom-color: #333;
         width: $size;
         height: $size;
-        animation: spin 1s linear infinite;
+        animation: spin 2s linear infinite;
+        background: url('/loading.png') no-repeat center / cover;
     }
 
 }
