@@ -3,6 +3,15 @@
     .fieldGroup {
         @apply flex flex-wrap justify-evenly items-center mt-8;
         gap: 2rem 1rem;
+
+        @screen sm {
+            gap: 2.5rem 1rem;
+        }
+
+        @screen md {
+            gap: 2.5rem 1rem;
+        }
+
     }
 
     .tile {
@@ -23,23 +32,29 @@
             flex: 1 0 calc(25% - 1rem);
         }
 
-        &.active:before {
-            content: "";
-            position: absolute;
-            left: -1rem;
-            top: calc(50% - 0.75rem);
-            width: 1px;
-            height: 1.5rem;
-            @apply transition-all duration-500;
+        svg {
+            @apply absolute;
+            top: calc(50% - 0.5rem);
+            left: -1.25rem;
 
-            @screen sm {
+            @screen md {
                 top: unset;
-                bottom: -1rem;
-                left: calc(50% - 1rem);
-                width: 2rem;
-                height: 1px;
+                left: calc(50% - 0.5rem);
+                bottom: -1.5rem;
             }
 
+        }
+
+        &.active {
+
+            svg {
+                @apply block;
+            }
+
+        }
+
+        svg {
+            @apply hidden;
         }
 
     }
@@ -65,8 +80,16 @@
         .tile {
             @apply hover:bg-gray-despair hover:text-white;
 
-            &.active:before {
-                @apply bg-blue-lightest border-blue-lightest;
+            &.active {
+
+                svg {
+                    @apply text-blue-lightest;
+                }
+
+                &:before {
+                    @apply bg-blue-lightest border-blue-lightest;
+                }
+
             }
 
         }
@@ -78,10 +101,17 @@
         .tile {
             @apply border-2 hover:bg-gray-despair hover:text-gray-light;
 
-            &.active:before {
-                @apply bg-red-light border-red-light;
-            }
+            &.active {
 
+                svg {
+                    @apply text-red-light;
+                }
+
+                &:before {
+                    @apply bg-red-light border-red-light;
+                }
+
+            }
         }
 
     }
@@ -92,9 +122,21 @@
             @apply border-2;
             @apply hover:bg-yellow hover:border-blue-lighter hover:text-black;
 
-            &.active:before {
-                @apply bg-yellow border-yellow;
-                @apply hover:bg-yellow;
+            svg {
+                @apply text-yellow;
+            }
+
+            &.active {
+
+                svg {
+                    @apply text-yellow;
+                }
+
+                &:before {
+                    @apply bg-yellow border-yellow;
+                    @apply hover:bg-yellow;
+                }
+
             }
 
         }

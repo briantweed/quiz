@@ -6,6 +6,8 @@ import {CONDITIONS} from "@constants";
 import {motion} from "framer-motion";
 import {container, item} from "@variants/tiles";
 import Light from "@components/shared/Light";
+import { WiDaySunny, WiHorizon, WiMoonWaningCrescent2 } from "react-icons/wi";
+import { AiOutlineEye } from "react-icons/ai";
 
 
 export default function DrivingConditionsPage({theme, methods: {update, implode}}) {
@@ -13,6 +15,14 @@ export default function DrivingConditionsPage({theme, methods: {update, implode}
     const wrapperStyles = implode([styles.wrapper, styles[theme]]);
     const options = useMemo(() => CONDITIONS, []);
 
+    const Icon = () => {
+        switch (theme) {
+            case "default": return <WiDaySunny/>;
+            case "dark": return <WiHorizon/>;
+            case "contrast": return <WiMoonWaningCrescent2/>;
+            case "dracula": return <AiOutlineEye/>;
+        }
+    }
 
     return (
         <main role="main" className={wrapperStyles}>
@@ -48,7 +58,7 @@ export default function DrivingConditionsPage({theme, methods: {update, implode}
                                             variants={item}
                                             className={styles.tile + " " + (option.value === theme ? styles.active : '') }
                                             onClick={() => update(option.value)}
-                                        ><label id={"label_" + option.value}>{ option.label }</label></motion.li>
+                                        ><label id={"label_" + option.value}>{ option.label }</label><Icon/></motion.li>
                                     )
                                 })}
                             </motion.ul>
