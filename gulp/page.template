@@ -3,7 +3,7 @@ import PageTemplate from "@layouts/PageTemplate";
 import withTheme from "@wrappers/Theme";
 
 const {{ page_name }}Page = dynamic(() => import("@views/{{ page_name }}Page").then());
-const Themed{{ page_name }} = withTheme({{ page_name }});
+const Themed{{ page_name }} = withTheme({{ page_name }}Page);
 
 
 export default function Page() {
