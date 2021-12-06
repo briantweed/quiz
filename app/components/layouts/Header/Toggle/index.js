@@ -3,11 +3,14 @@ import {useDispatch, useSelector} from "react-redux";
 import {disableLoading, enableLoading} from "@store/loadingSlice";
 import Light from "@components/shared/Light";
 import {useTheme} from "@wrappers/Theme";
+import {useRouter} from "next/router";
 
 
 export default function Toggle() {
 
     const dispatch = useDispatch();
+
+    const router = useRouter();
 
     const themeItems = useTheme();
 
@@ -18,7 +21,8 @@ export default function Toggle() {
     const [toggle, setToggle] = useState(isLoading);
 
     const toggleLoading = () => {
-        if (theme !== defaultTheme) {
+        router.push('/');
+        if (theme === '---disabled---') {
             if (!toggle) {
                 setToggle(false);
                 new Promise((resolve) => {
@@ -35,8 +39,9 @@ export default function Toggle() {
                     }).then(() => {
                             setTimeout(() => {
                                 dispatch(disableLoading());
+                                console.log('home');
                                 console.log('end');
-                            }, 15000);
+                            }, 20000);
                         }
                     )
                 })
