@@ -1,11 +1,11 @@
 import {createContext, useContext, useEffect, useState} from "react";
-
 const ThemeContext = createContext({});
 const BODY_TAG = "body";
 const DEFAULT_THEME = "default";
 
-
 export function Theme({ children, themes, storageKey }) {
+
+    const [theme, updateTheme] = useState(DEFAULT_THEME);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem(storageKey);
@@ -14,17 +14,12 @@ export function Theme({ children, themes, storageKey }) {
         }
     });
 
-
-    const [theme, updateTheme] = useState(DEFAULT_THEME);
-
-
     const label = (() => {
         const selectedTheme = themes.find(option => {
             return option.value === theme;
         })
         return selectedTheme.label;
     })();
-
 
     const update = (theme) => {
 
@@ -43,14 +38,11 @@ export function Theme({ children, themes, storageKey }) {
                 document.querySelector(BODY_TAG).classList.add(theme);
             }
         }
-
     }
-
 
     const implode = (array, delimiter = " ") => {
         return array.join(delimiter).trim().replace(/\s\s+/g, " ");
     }
-
 
     return (
         <ThemeContext.Provider value={{theme, label, defaultTheme: DEFAULT_THEME, methods: {update, implode}}}>
@@ -60,21 +52,15 @@ export function Theme({ children, themes, storageKey }) {
 
 }
 
-
 export function useTheme() {
     return useContext(ThemeContext);
 }
 
-
 export default function withTheme(Component) {
-
     return function WithThemeValues({ ...props }) {
         const themeItems = useTheme();
-
         return (
             <Component {...props} {...themeItems}/>
         )
-
     };
-
 }
