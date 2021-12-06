@@ -1,0 +1,17 @@
+import dynamic from "next/dynamic";
+import PageTemplate from "@layouts/PageTemplate";
+import withTheme from "@wrappers/Theme";
+
+const {{ page_name }} = dynamic(() => import("@content/{{ page_name }}").then());
+const Themed{{ page_name }} = withTheme({{ page_name }});
+
+
+export default function Page() {
+
+    return (
+        <PageTemplate>
+            <Themed{{ page_name }}/>
+        </PageTemplate>
+    )
+
+}
