@@ -4,7 +4,7 @@
         "paths": {
             "@components/*": ["app/components/*"],
             "@layouts/*": ["app/components/layouts/*"],
-            "@content/*": ["app/components/views/*"],
+            "@views/*": ["app/components/views/*"],
             "@wrappers/*": ["app/components/wrappers/*"],
             "@variants/*": ["app/variants/*"],
             "@store/*": ["app/store/*"],

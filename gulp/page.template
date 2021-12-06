@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import PageTemplate from "@layouts/PageTemplate";
 import withTheme from "@wrappers/Theme";
 
-const {{ page_name }} = dynamic(() => import("@content/{{ page_name }}").then());
+const {{ page_name }}Page = dynamic(() => import("@views/{{ page_name }}Page").then());
 const Themed{{ page_name }} = withTheme({{ page_name }});
 
 

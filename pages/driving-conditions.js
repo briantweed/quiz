@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import PageTemplate from "@layouts/PageTemplate";
 import withTheme from "@wrappers/Theme";
 
-const DrivingConditionsPage = dynamic(() => import("@content/DrivingConditionsPage").then());
+const DrivingConditionsPage = dynamic(() => import("@views/DrivingConditionsPage").then());
 const ThemedDrivingConditionsPage = withTheme(DrivingConditionsPage);
 
 

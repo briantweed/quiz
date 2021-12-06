@@ -79,11 +79,12 @@ const generate_favicon = (done) => {
 };
 
 
-const create_component = () => {
+const create_component = (x) => {
     let options = minimist(process.argv.slice(3));
-    if (options.component !== undefined && options.component !== true) {
-        const componentPath = options.component.replace(/\./g,"/")
-        const componentName = options.component.split(/[\/.]+/).pop();
+    let optionsComponent = x ? x : options.component;
+    if (optionsComponent !== undefined && optionsComponent !== true) {
+        const componentPath = optionsComponent.replace(/\./g,"/")
+        const componentName = optionsComponent.split(/[\/.]+/).pop();
         if (!fs.existsSync("./app/Components/" + componentPath)) {
             return gulp.src("./gulp/component.template")
                 .pipe(replace("{{ page_name }}", componentName))
@@ -97,6 +98,27 @@ const create_component = () => {
         } else {
             return gulp.src("/")
                 .pipe(notify({message: "Error: " + componentName + " already exists", emitError: true}));
+        }
+    } else {
+        return gulp.src("/")
+            .pipe(notify({message: "Error: filename required", emitError: true}));
+    }
+};
+
+
+const create_page = () => {
+    let options = minimist(process.argv.slice(3));
+    if (options.name !== undefined && options.name !== true) {
+        if (!fs.existsSync("./pages/" + options.name)) {
+            create_component("views." + options.name + "Page");
+            return gulp.src("./gulp/page.template")
+                .pipe(replace("{{ page_name }}", options.name))
+                .pipe(rename(options.name + ".js"))
+                .pipe(gulp.dest("./pages/"))
+                .pipe(notify({message: options.name + " created", onLast: true}))
+        } else {
+            return gulp.src("/")
+                .pipe(notify({message: "Error: " + options.name + " already exists", emitError: true}));
         }
     } else {
         return gulp.src("/")
@@ -169,6 +191,7 @@ const help = (done) => {
     console.log("\n\nThis is a list of all available tasks: \n");
     console.log(" make    -  gulp make --component=Name");
     console.log(" add   -  gulp add --theme=Name");
+    console.log(" page   -  gulp page --name=Name");
     console.log(" favicon -  generate favicon\n\n");
     done();
 };
@@ -179,4 +202,5 @@ exports.help = help;
 exports.make = create_component;
 exports.favicon = generate_favicon;
 exports.add = add_theme;
+exports.page = create_page;
 
