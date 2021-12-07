@@ -79,9 +79,9 @@ const generate_favicon = (done) => {
 };
 
 
-const create_component = (x) => {
+const create_component = () => {
     let options = minimist(process.argv.slice(3));
-    let optionsComponent = x ? x : options.component;
+    let optionsComponent = options.component;
     if (optionsComponent !== undefined && optionsComponent !== true) {
         const componentPath = optionsComponent.replace(/\./g,"/")
         const componentName = optionsComponent.split(/[\/.]+/).pop();
