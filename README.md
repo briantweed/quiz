@@ -7,8 +7,8 @@
 ---
 
 - Node *14.17.6*
-- Next.js *12.0*
-- Tailwind *v2.2*
+- Next.js *12.0* - [https://nextjs.org/](https://nextjs.org/)
+- Tailwind *v2.2* - [https://tailwindcss.com/](https://tailwindcss.com/)
 
 ---
 
