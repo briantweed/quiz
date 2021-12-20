@@ -3,7 +3,7 @@ import {ToastContainer} from "react-toastify";
 const contextClass = {
     success: "bg-blue",
     error: "bg-red",
-    info: "bg-blue-lighter",
+    info: "bg-black",
     warning: "bg-red-lighter"
 };
 
